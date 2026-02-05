@@ -1,0 +1,673 @@
+.wrapper{
+          margin:10px
+        }
+         
+.header{
+  position: flex; /* Menjaga elemen tetap di viewport */
+       height:80px; }
+        
+.content{background-color:rgb(255, 252, 252);
+  position: flex; /* Menjaga elemen tetap di viewport */
+       }
+          
+.footer{ 
+       border-bottom: 2px solid #5ddd21;
+box-shadow: 1px 2px 9px #da0606;
+border-top: 2px solid #61b403;
+position: flex; /* Menjaga elemen tetap di viewport */
+
+}
+           
+.footer2{
+  
+  position: flex; /* Menjaga elemen tetap di viewport */  
+  border-bottom: 2px solid #5ddd21;
+  box-shadow: 1px 2px 9px #da0606;
+  border-top: 2px solid #36db0d;
+         
+           }
+
+           .footer4{
+            position: flex; /* Menjaga elemen tetap di viewport */
+            border-bottom: 2px solid #5ddd21;
+          box-shadow: 1px 2px 9px #da0606;
+          border-top: 2px solid #6fd60e;
+                  
+                   
+                     }
+           .footer3{ position: flex; /* Menjaga elemen tetap di viewport */
+            background-color: #050101;
+            color:white;
+          font-style: italic;
+                  
+                  
+                     }
+                  
+                     .footer_Tambah{
+                      position: flex; /* Menjaga elemen tetap di viewport */
+                   
+                      border-bottom: 2px solid #5ddd21;
+                      box-shadow: 1px 2px 9px #49da06;
+                      border-top: 2px solid #90cf1a;
+                 
+                                
+                             
+                               }
+                               .footer_terakhir{ background-color:hwb(189 1% 86%);
+                              
+                                position: flex; /* Menjaga elemen tetap di viewport */
+                                 border-bottom: 2px solid #46f340;
+                                box-shadow: 2px 2px 9px hwb(106 6% 15%);
+                                border-top: 2px solid #70da2a;
+                                font-style: italic;
+                                color:white;}
+                              
+
+           /*-----Responsive Drop Down Menu by MBT ----*/
+           p{text-align: justify;
+            padding:2px;}
+           pre{text-align: justify;}
+           .video{ position: flex; /* Menjaga elemen tetap di viewport */;
+            border-bottom: 2px solid #5ddf21;
+            box-shadow: 1px 2px 9px #2dd80b;
+            border-top: 2px solid #40e916;}
+body {
+margin: 0px;
+}
+#menu{
+     position: flex; /* Menjaga elemen tetap di viewport */
+     width:99.8%; /* properti panjang dari menu dropdown */
+background: #1ac214;
+color: #FFF;
+height: 50px;
+border-bottom: 2px solid #DDD;
+box-shadow: 1px 2px 9px #B1B1B1;
+border-top: 2px solid #DDD;
+}
+#menu ul,#menu li{margin:0 auto;padding:0 0;list-style:none}
+
+#menu li{float:left;display:inline;position:relative;font:bold 0.9em Arial;text-shadow: 1px 2px 4px #838383;}
+#menu a{display: block;
+line-height: 40px;
+padding: 0 14px;
+text-decoration: none;
+color: #FFF;
+}
+
+#menu li a:hover{
+color: #E4E4E4;
+-webkit-transition: all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out;
+-ms-transition: all .1s ease-in-out;
+-o-transition: all .1s ease-in-out;
+transition: all .1s ease-in-out;
+background: #ceb216;
+}
+#menu input{display:none;margin:0 0;padding:0 0;width:100px;height:30px;opacity:0;cursor:pointer}
+#menu label{font:bold 30px Arial;display:none;width:35px;height:36px;line-height:36px;text-align:center}
+#menu label span{font-size:16px;position:absolute;left:35px}
+#menu ul.menus{
+height: auto;
+overflow: hidden;
+
+background: #1ac214;
+position: absolute;
+z-index: 100;
+display: none;
+}
+#menu ul.menus li{
+display: block;
+width: 120%;
+font:normal 0.8em Arial;
+text-transform: none;
+text-shadow: none;
+border-bottom: 1px dashed #31AFDB;
+}
+#menu ul.menus a{
+color: #FFF;
+line-height: 35px;
+}
+#menu li:hover ul.menus{display:block}
+#menu ul.menus a:hover{
+background: #0cc3e4;
+color: #FFF;
+-webkit-transition: all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out;
+-ms-transition: all .1s ease-in-out;
+-o-transition: all .1s ease-in-out;
+transition: all .1s ease-in-out;
+}
+@media screen and (max-width: 800px){
+  #menu{position:relative}
+  #menu ul{background:#09b62e;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}
+  #menu ul.menus{width:90%;position:static;padding-left:20px}
+  #menu li{display:block;float:none;width:auto; font:normal 0.8em Arial;}
+  #menu input,#menu label{position:absolute;top:0;left:0;display:block}
+  #menu input{z-index:4}
+  #menu input:checked + label{color:white}
+  #menu input:checked ~ ul{display:block}
+}
+
+/*-----Bagian Akhir Responsive Drop Down Menu by MBT ----*/
+#video{float:left;
+  position: flex; /* Menjaga elemen tetap di viewport */
+        margin:10px;}
+        p{ 
+        margin:10px;
+        }
+        .left{float:left;
+          border-radius: 30px 0 30px 0;
+        
+                margin:10px;}
+/*-----Bagian Awal Tombol media sosial ----*/
+        .wrapper .icon{
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  
+  margin: 10px;
+  width: 10px;
+  height: 5px;
+  line-height: 50px;
+  font-size: 20px;
+  display: inline-block;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #333;
+  text-decoration: none;
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #eaf5ea;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+}
+/*-----Bagian Akhir Tombol media sosial ----*/
+.right{float:right;
+        margin:40px;}/*--Buat Portopolio--*/
+/* CSS Tombol*/
+     .tombol-animasi { 
+      margin:15px;
+     
+padding:10px 30px;
+font:normal 0.10em Arial;
+text-transform: none;
+text-shadow: none;
+background-color:#1ac214;
+color:rgb(247, 245, 245);
+float:left;
+font-size: 15px;
+border:none;
+border-radius: 30px 0 30px 0;
+cursor: pointer;
+opacity: 100;
+visibility: visible;
+pointer-events: auto;
+border-bottom: 2px solid #5ddd21;
+box-shadow: 1px 2px 9px #da0606;
+border-top: 2px solid #050101;}
+/*Bagian Akhir CSS Tombol*/
+
+ /* Main Section menu les komputer */
+.main{
+  margin:10px;
+  position: flex;
+  padding: 10px;
+  width: 80%;
+  
+}
+.main-top{
+  display: flex;
+  width: 100%;
+ 
+}
+.main-top i{
+  position: flex;
+  right: 0;
+  margin: 5px 10px;
+  color: rgb(241, 237, 237);
+  cursor: pointer;
+}
+.main-skills{
+  display: flex;
+  margin-top: 20px;
+}
+.main-skills .card{
+  width: 25%;
+  margin: 10px;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.main-skills .card h3{
+  margin: 10px;
+  text-transform: capitalize;
+}
+.main-skills .card p{
+  font-size: 12px;
+}
+.main-skills .card button{
+  background: rgb(91, 177, 42);
+  color: #f8eeee;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.main-skills .card button:hover{
+  background: rgba(223, 70, 15, 0.856);
+}
+.main-skills .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+
+/* Courses */
+.main-course{ 
+  margin-top:20px ;
+  text-transform: capitalize;
+}
+.course-box{
+
+  position:flex;
+  width: 80%;
+  
+ 
+  padding: 0px;
+  margin-top: 10px;
+  
+  border-radius: 30px 0 30px 0;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul{
+  list-style: none;
+  display: flex;
+  
+}
+.course-box ul li{
+  margin: 10px;
+  color: rgb(233, 224, 224);
+  cursor: pointer;
+}
+.course-box ul .active{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course{
+  display: flex;
+}
+.box{
+  border-bottom: 2px solid #46f340;
+  box-shadow: 2px 2px 9px hwb(106 6% 15%);
+  border-top: 2px solid #2ce015;
+  width: 60%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  position:absolute;
+ 
+  
+  box-shadow: 0 20px 35px rgba(201, 10, 10, 0.1);
+}
+.box p{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.box button{
+  background: #ca0707;
+  color: #e41212;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.box button:hover{
+  background: rgba(0, 0, 0, 0.842);
+}
+.box i{
+  font-size: 7rem;
+  float: right;
+  margin: -20px 20px 20px 0;
+}
+.html{
+  color: rgb(25, 94, 54);
+}
+.css{
+  color: rgb(104, 179, 35);
+}
+.js{
+  color: rgb(28, 98, 179);
+}
+/*Tombol whatsapp*/
+  /* for desktop */
+  .whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 60px;
+    right: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    margin-top: 14px;
+}
+
+/* for mobile */
+@media screen and (max-width: 750px) {
+    .whatsapp-icon {
+        margin-top: 10px;
+    }
+
+    .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+    }
+}
+
+/* Bagian akhir Tombol WhatsApp */
+
+
+       :root {
+        --background-color: #ffffff;
+        --text-color: #333333;
+      }
+      
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      body.dark-mode {
+        --background-color: #0a0a0a;
+        --text-color: #ffffff;
+      }
+      
+      button {
+        cursor: pointer;
+        padding: 10px 15px;
+      }
+      
+     /*bagian akhir tombol whatsapp*/
+
+
+
+.contact-card {
+    margin:30px;
+    background-color: #0e0d0d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-bottom: 2px solid #5ddd21;
+    box-shadow: 1px 2px 9px #da0606;
+    border-top: 2px solid #050101;
+    width: 289px;
+    text-align: left;
+    border-bottom: 2px solid #5ddf21;
+box-shadow: 1px 2px 9px #2dd80b;
+border-top: 2px solid #40e916;}
+
+
+.contact-header {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-header h2 {
+    
+    margin: 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    color: #007bff;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.info-item span, .info-item a {
+   
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+
+/*CSS menu les komputer*/
+.menu-card {
+    
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(247, 245, 245, 0.1);
+  
+    overflow: hidden;
+}
+
+.menu-header {
+    background-color: #09990e;
+    color:rgb(252, 248, 248);
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-header h2 {
+    margin: 0 0 5px 0;
+}
+
+.menu-header p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.menu-body {
+    padding: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #12c53e;
+}
+
+.item-price span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+/*CSS akhir menu les komputer*/
+/* Pastikan sudah link Font Awesome di <head> untuk ikon */
+@import url('cdnjs.cloudflare.com');
+
+footer {
+ 
+    background-color: #2c3e50; /* Warna gelap modern */
+    color: #ecf0f1; /* Teks terang */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {padding:23px;
+    display: flex;
+    flex-wrap: wrap; /* Agar responsif */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-section {
+    flex-basis: 30%; /* 3 kolom */
+    margin-bottom: 30px;
+}
+
+.footer-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #050505; /* Warna aksen */
+    border-bottom: 2px solid #02080c;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-section p, .footer-section span {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #3498db;
+}
+
+.socials a {
+    color: #ecf0
+}
+
+
+/* Wadah utama */
+.social-container {
+  display: flex; /* Agar ikon berbaris */
+  justify-content: center; /* Pusatkan ikon */
+  padding: 10px;
+}
+
+/* Gaya dasar ikon */
+.social-icon {
+  display: inline-block;
+  font-size: 24px; /* Ukuran ikon */
+  width: 50px;
+  height: 50px;
+  line-height: 50px; /* Pusatkan ikon vertikal */
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 50%; /* Membuatnya bulat */
+  color: #fff; /* Warna ikon */
+  transition: background-color 0.3s ease; /* Efek transisi */
+}
+
+/* Warna ikon spesifik */
+.facebook { background-color: #3b5998; }
+.instagram { background-color: #C13584; }
+.twitter { background-color: #1DA1F2; }
+.youtube { background-color: #FF0000; }
+
+/* Efek saat kursor diarahkan */
+.facebook:hover { background-color: #2a4a7b; }
+.instagram:hover { background-color: #8a2d5c; }
+.twitter:hover { background-color: #0d83c9; }
+.youtube:hover { background-color: #cc0000; }

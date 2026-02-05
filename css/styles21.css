@@ -1,0 +1,36 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fafafa;
+    color: #f0f3f7;
+
+}
+
+.bg-primary {
+    background-color: #030f08 !important;
+    
+}
+
+.btn-warning {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: #003366;
+}
+
+.hero {
+    background: linear-gradient(135deg, #003366, #10dd32);
+}
+
+.card {
+  
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #5ddd21;
+  
+    border-top: 2px solid #36db0d;
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+}
