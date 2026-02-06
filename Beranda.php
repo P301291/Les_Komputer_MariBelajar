@@ -55,7 +55,7 @@ $apps = [
 <!DOCTYPE html> <!--Sudah pakai HTML 5-->
 <html lang="id">
     <head>
-    <title>Mari Belajar Komputer</title>
+    <title>Mari Belajar</title>
 	<?php
 	include 'koneksi.php';
 	?>
