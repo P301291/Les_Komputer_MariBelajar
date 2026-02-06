@@ -1,5 +1,5 @@
 
-<!DOCTYPE html> <!--Sudah pakai HTML 5 Paiaki teknologi terbaru-->
+<!DOCTYPE html> <!--Sudah pakai HTML 5 Pakai teknologi terbaru-->
 <html lang="id">
 <?php
   require_once("perpage.php");  
