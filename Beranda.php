@@ -742,7 +742,7 @@ Pendaftaran berhasil!
 <div class="footer"><!--bagian kaki websie-->
 <center><h2>LES KOMPUTER MARI BELAJAR</h2></center>
     <br>
-    <!--Video--> <div id="video" Class="video"><iframe width="330" height="215" src="https://www.youtube.com/embed/fiuhu924--M?si=eC_k5DVhNTXhuUY2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><!--Akhir Video-->
+    <!--Video--> <div id="video" Class="video"><iframe width="300" height="215" src="https://www.youtube.com/embed/fiuhu924--M?si=eC_k5DVhNTXhuUY2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><!--Akhir Video-->
 <section id="bagian-keuntungan">
 
 
