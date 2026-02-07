@@ -154,6 +154,7 @@ border-top: 2px solidrgb(85, 150, 12);
 .container {
     margin:20px;
     padding: 4px;
+  
     
 }
 .Tombol {
@@ -935,15 +936,11 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
             <span><i class="fas fa-phone "></i>&#160;085776821436</span><br>
             <span class="fas fa-envelope">&#160;<a href="https://mail.google.com/mail/?view=cm&fs=1&to=candra.argadinata1234@gmail.com" target="_blank" style="color:white"><em>candra.argadinata1234@gmail.com</em></a></span><br>
             <span><i class="fas fa-map-marker"></i> <span>&#160;Alamat: Dsn Pulomulya, Dsa Ciparagejaya Kec. Tempuran &#160;&#160;&#160;&#160;Kab. Karawang</span><br>
-           <!-- <div class="newsletter">
-                <h1>Langganan</h1>
-                <input type="email" placeholder="Masukkan email Anda">
-                <br>
-                <br>
-                <button type="submit">Berlangganan</button>-->
+           <div class="newsletter">
                 <h1>Selamat Datang Pengunjung</h1>
     
     <div class="counter-box">
+
         <p>Jumlah Pengunjung: <?php echo $counter; ?></p>
       
     </div>
@@ -958,13 +955,13 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#"style="color:white">Mari Belajar</a>, Website Pendaftaran Online Les Komputer.
-
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         Designed By <a class="border-bottom" href="#"style="color:white">Candra Argadinata, S.Kom.</a><br>
                         Distributed By <a class="border-bottom" href="#"style="color:white">Mari Belajar</a>
                     </div>
                    
         </div>
+        
 </div><!--ini div penutup dari wrapper-->
 
 </body>
