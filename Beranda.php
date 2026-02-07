@@ -73,7 +73,7 @@ if ($counter !== false) {
 <!DOCTYPE html> <!--Sudah pakai HTML 5-->
 <html lang="id">
     <head>
-    <title>Mari Belajar</title>
+    <title>Mari Belajar Komputer</title>
 	<?php
 	include 'koneksi.php';
 	?>
