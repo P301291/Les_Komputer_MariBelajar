@@ -52,6 +52,24 @@ $apps = [
   
 ];
 ?>
+<?php
+// Nama file untuk menyimpan jumlah pengunjung
+$file_counter = 'counter1.txt';
+
+// Baca nilai saat ini dari file
+$counter = file_get_contents($file_counter);
+
+// Tambah 1 ke hitungan jika file berhasil dibaca
+if ($counter !== false) {
+    $counter++;
+    // Simpan kembali nilai baru ke file
+    file_put_contents($file_counter, $counter);
+} else {
+    // Jika file tidak bisa dibaca, inisialisasi dengan 1
+    $counter = 1;
+    file_put_contents($file_counter, $counter);
+}
+?>
 <!DOCTYPE html> <!--Sudah pakai HTML 5-->
 <html lang="id">
     <head>
@@ -69,7 +87,7 @@ $apps = [
       
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  <!-- css whatsapp -->
     <style>
-    
+ .counter-box { border: 1px solid #ccc; padding: 4px; display: inline-block; border-radius: 5px;color:white; height:50px; }
 
         .container {
             max-width: 100%;
@@ -499,6 +517,7 @@ if($sub){
 <section id="bagian-daftar">
 <div class="menu-card">
   <div class="menu-header">
+  
             <h2>Les Komputer Mari Belajar</h2>
               <!-- Tombol untuk membuka popup -->
     <button id="open-button">Informasi Penting</button>
@@ -916,12 +935,18 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
             <span><i class="fas fa-phone "></i>&#160;085776821436</span><br>
             <span class="fas fa-envelope">&#160;<a href="https://mail.google.com/mail/?view=cm&fs=1&to=candra.argadinata1234@gmail.com" target="_blank" style="color:white"><em>candra.argadinata1234@gmail.com</em></a></span><br>
             <span><i class="fas fa-map-marker"></i> <span>&#160;Alamat: Dsn Pulomulya, Dsa Ciparagejaya Kec. Tempuran &#160;&#160;&#160;&#160;Kab. Karawang</span><br>
-            <div class="newsletter">
+           <!-- <div class="newsletter">
                 <h1>Langganan</h1>
                 <input type="email" placeholder="Masukkan email Anda">
                 <br>
                 <br>
-                <button type="submit">Berlangganan</button>
+                <button type="submit">Berlangganan</button>-->
+                <h1>Selamat Datang Pengunjung</h1>
+    
+    <div class="counter-box">
+        <p>Jumlah Pengunjung: <?php echo $counter; ?></p>
+      
+    </div>
             </div>
         </div>
     </div>
