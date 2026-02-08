@@ -108,6 +108,7 @@ if ($counter !== false) {
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(71, 71, 71, 0.1);
             transition: transform 0.2s;
+            border-right: 5px solid green;
             border-left: 5px solid green;
             border-bottom: 2px solid #5ddd21;
 
