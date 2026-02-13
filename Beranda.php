@@ -111,6 +111,7 @@ if ($counter !== false) {
             border-right: 5px solid green;
             border-left: 5px solid green;
             border-bottom: 2px solid #5ddd21;
+            border-top: 2px solid #5ddd21;
 
 border-top: 2px solidrgb(85, 150, 12);
         }
@@ -170,6 +171,7 @@ border-top: 2px solidrgb(85, 150, 12);
 }
 .Tombol:hover{transform: scale(1.1);
                Background:blue;}
+               
 button#open-popup-btn {
     
     padding: 10px 20px;
@@ -323,6 +325,20 @@ button#open-button:hover{transform: scale(1.1);
     color: white;
     text-decoration: none;
 }
+
+.btndaftar {
+    background-color: #1916c2;
+    border: #F0F0F0 1px solid;
+    padding: 2px 5px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    float:left;
+    border-radius: 5px;
+    transition: 0.3s;
+}/*ini css untuk tombol daftar unggulan*/
 
             </style>
 </head>
@@ -902,7 +918,13 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
         <?php endforeach; ?>
     </div>
 </div>
-
+   <div class="container">
+        <p>Silahkan Daftar</p>
+        <!-- Tombol untuk membuka pop-up -->
+        <a class ="btndaftar" href="student-create2.php">Daftar Sekarang</a>
+        <br>
+        <br>
+    </div>
         <div class="footer_terakhir">
     
   <div class="footer-content">
