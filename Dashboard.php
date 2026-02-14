@@ -76,6 +76,21 @@ include('function.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        .fieldset{background-color: #4CAF50; /* Warna hijau */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Sudut tumpul */
+ 
+}
+      </style>
    </head>
 <body class="scroll">
    <div class="sidebar">
@@ -160,7 +175,30 @@ include('function.php');
      </div>
    </div>
    <div class="home_content">
-   <div class="text" style="color:white">Dashboard</div>
+    
+   <div class="text" style="color:white">Dashboard   <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
+
+// Query mengambil data
+$ukuran = "100%"; // Ukuran sisi
+$ukuran2 = "120px"; // Ukuran sisi
+$warna = "blue";   // Warna persegi
+$warna_text="white";
+$mrgn="1px";
+$pdg="right";
+$brd="20px 10px 20px 0px";
+$sql = "SELECT * FROM toy";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+echo "<div style='width: $ukuran2; height: $ukuran; background-color: $warna; color: $warna_text; margin:$mrgn;border-radius:$brd;float:$pdg'> <h4> 👨‍💼👩‍💼 $jumlah_data</h4></div>" ;
+
+?></div>  
+   
+
+
   <!-- <section class="main">
       <div class="main-top">
      </div>
@@ -203,9 +241,10 @@ include('function.php');
         
       </section>
     </section>
-
+    <br>
    <div class="row">
-<br>
+
+
 
             <div class="col-sm-12">
                 <div class="table-responsive">

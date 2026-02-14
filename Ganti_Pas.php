@@ -226,7 +226,19 @@ include('function.php');
          
           <?php } ?>
           <tr>
-          <td colspan="6" align="right"> Previous&nbsp;<?php echo $result["perpage"]; ?>Next &nbsp;</td>
+          <td colspan="6" align="right"> Previous&nbsp;<?php echo $result["perpage"]; ?>Next &nbsp; <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
+
+// Query mengambil data
+$sql = "SELECT * FROM tb_user";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+
+echo "Admin: " . $jumlah_data;
+?>&nbsp;</td></td>
           </tr>
         <tbody>
       </table>

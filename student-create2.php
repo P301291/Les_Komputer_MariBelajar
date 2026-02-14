@@ -170,12 +170,14 @@ if($sub){
                             <label>Kursus</label>
                                 <Select id="Kursus" name="Kursus" class="form-control" required>
                                 <option value="">--Pilih Kursus--</option>
-                                <option value="Komputer Kls 1 (8 x P)">Komputer Kelas 1 (8 x Pertemuan)</option>
-                                    <option value="Komputer Kls 1 (12 x P)">Komputer Kelas 1 (12 x Pertemuan)</option>
-                                    <option value="Komputer Kls 2 (8 x P)">Komputer Kelas 2 (8 x Pertemuan)</option>
-                                    <option value="Komputer Kls 2 (12 x P)">Komputer Kelas 2 (12 x Pertemuan)</option>
-                                    <option value="Komputer Kls 3 (8 x P)">Komputer Kelas 3 (8 x Pertemuan)</option>
-                                    <option value="Komputer Kls 3 (12 x P)">Komputer Kelas 3 (12 x Pertemuan)</option>
+                                <option value="Kelas Design Grafis (8 x P)">Kelas Design Grafis  (8 x Pertemuan)</option>
+                                    <option value="Design Grafis (12 x P)">Kelas Design Grafis (12 x Pertemuan)</option>
+                                    <option value="Microsoft Office (8 x P)">Kelas Microsoft Office (8 x Pertemuan)</option>
+                                    <option value="Microsoft Office (12 x P)">Kelas Microsoft Office (12 x Pertemuan)</option>
+                                    <option value="Web Developer (8 x P)">Kelas Web Developer (8 x Pertemuan)</option>
+                                    <option value="Web Developer (12 x P)">Kelas Web Developer (12 x Pertemuan)</option>
+                                    <option value="Dekstop Developer (8 x P)">Kelas Dekstop Developer (8 x Pertemuan)</option>
+                                    <option value="Dekstop Developer (12 x P)">Kelas Dekstop Developer (12 x Pertemuan)</option>
 </select>
                             </div>
                             <div class="mb-3">

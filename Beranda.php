@@ -70,6 +70,7 @@ if ($counter !== false) {
     file_put_contents($file_counter, $counter);
 }
 ?>
+
 <!DOCTYPE html> <!--Sudah pakai HTML 5-->
 <html lang="id">
     <head>
