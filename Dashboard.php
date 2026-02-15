@@ -195,7 +195,8 @@ $result = mysqli_query($koneksi, $sql);
 $jumlah_data = mysqli_num_rows($result);
 echo "<div style='width: $ukuran2; height: $ukuran; background-color: $warna; color: $warna_text; margin:$mrgn;border-radius:$brd;float:$pdg'> <h4> 👨‍💼👩‍💼 $jumlah_data</h4></div>" ;
 
-?></div>  
+?>
+</div>  
    
 
 

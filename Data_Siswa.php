@@ -328,9 +328,26 @@ $result = mysqli_query($koneksi, $sql);
 $jumlah_data = mysqli_num_rows($result);
 
 echo "Jumlah: " . $jumlah_data;
-?>&nbsp;</td>
+?>&nbsp;<?php
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Laki-Laki'");
+$jumlah_l = mysqli_num_rows($query_l);
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Perempuan'");
+$jumlah_p = mysqli_num_rows($query_p);
+
+echo "(&nbsp;L: " . $jumlah_l;
+echo "&nbsp;)";
+echo "(&nbsp;P:" . $jumlah_p;
+echo "&nbsp;)&nbsp;";
+?></td>
           </tr>
         <tbody>
+          
+
       </table>
       </form> 
        
