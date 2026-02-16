@@ -74,6 +74,27 @@ include('function.php');
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      .btndaftar {
+    background-color:rgb(13, 216, 57);
+    color: #FFF;
+    text-decoration: none;
+    padding: 7px 7px;
+    font-size: 13px;
+    cursor:pointer;
+    border-radius:10px;
+    transition: 0.3s;
+}
+.btnDeleteAction3{
+    background-color:rgb(13, 216, 57);
+    color: #FFF;
+    padding: 5px p5x;
+    font-size: 10px;
+    cursor:pointer;
+    border-radius:10px;
+
+}
+      </style>
    </head>
 <body class="scroll">
 <div class="sidebar">
@@ -149,7 +170,7 @@ include('function.php');
          <div class="user_details">
          <img decoding="async" src="gambar/mb21.png" alt="">
            <div class="name_job">
-             <div class="name"> <?php echo $_SESSION['nama']; ?></div>
+             <div class="name"> <?php echo $_SESSION['nama']; ?>&#160;&#160;<a href='update.php'class="btnDeleteAction3">Ubah</a></div>
              <div class="job">Admin Mari Belajar</div>
            </div>
          </div>
@@ -186,20 +207,20 @@ include('function.php');
 <br>
 
     <div id="toys-grid">  
-
+    <!--<a href='update.php'class="btnDeleteAction2">Ubah</a>-->
       <form name="frmSearch" method="post" action="Ganti_Pas.php">
       <div class="search-box">
-      <p align="left"><input type="text" placeholder="Username" name="search[username]" class="demoInputBox" value="<?php echo $username; ?>" /><input type="reset" class="btnSearch" value="Reset"><input type="submit" name="go" class="btnSearch" value="Search"> </p>
-
+      <p align="left"><input type="text" placeholder="Username" name="search[username]" class="demoInputBox" value="<?php echo $username; ?>" /><input type="reset" class="btnSearch" value="Reset"><input type="submit" name="go" class="btnSearch" value="Search"> &nbsp;<a class="btndaftar" href="index3.php">Tambah</a></p>
+     
       </div>
   
       <table class="scroll" cellpadding="4" cellspacing="1">
         <thead>
           <tr>  
-          <th><strong>&#160 Username &#160</strong></th>
-          <th><strong>&#160 Nama &#160</strong></th>          
-          <th><strong>&#160 level &#160</strong></th>
-          <th><strong>&#160 Action &#160</strong></th>
+          <th><strong>&#160; Username &#160</strong></th>
+          <th><strong>&#160; Nama &#160</strong></th>          
+          <th><strong>&#160; level &#160</strong></th>
+          <th><strong>&#160; Action &#160</strong></th>
           
           </tr>
         </thead>
@@ -214,7 +235,7 @@ include('function.php');
           <td>&nbsp;<?php echo $result[$k]["nama"]; ?>&#160</td>
           <td>&nbsp;<?php echo $result[$k]["level"]; ?>&#160</td>
           <td>
-          <a class="btnDeleteAction" href="delete1.php?action=delete&id=<?php echo $result[$k]["id"]; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">Hapus</a> <a href='update.php'class="btnDeleteAction2">Ubah</a>&nbsp;<a href='index3.php'class="btnDeleteAction3">Tambah</a> 
+          <a class="btnDeleteAction" href="delete1.php?action=delete&id=<?php echo $result[$k]["id"]; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">Hapus</a> 
                     </td>
           </tr>
           <?php

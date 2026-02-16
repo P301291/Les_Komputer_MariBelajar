@@ -341,6 +341,30 @@ button#open-button:hover{transform: scale(1.1);
     transition: 0.3s;
 }/*ini css untuk tombol daftar unggulan*/
 
+.container23 {
+            text-align: center;
+            background: #222;
+            padding: 6px 6px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.1);
+            border: 2px solid #333;
+        }
+
+        .jam-digital {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+            letter-spacing: 5px;
+        }
+
+        .tanggal {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
             </style>
 </head>
 <body>
@@ -355,6 +379,7 @@ button#open-button:hover{transform: scale(1.1);
 </label>
 <ul>
 <li><a href='Beranda.php'>Home</a></li>
+<li><a href='portofolio.php'>Portofolio Pengajar</a></li>
 <li><a href='#bagian-keuntungan'>Manfaat Belajar Teknologi</a></li>
 <li><a href='#bagian-daftar'>Daftar</a></li>
 <!-- <li><a href=''>Kegiatan Belajar</a></li>-->
@@ -365,7 +390,7 @@ button#open-button:hover{transform: scale(1.1);
 <li><a href='https://www.google.com/maps/place/Mari+Belajar/@-6.1576294,107.4902235,153m/data=!3m1!1e3!4m14!1m7!3m6!1s0x2e6963e0d972c391:0x5c4e8c4c1fb0e1dc!2sMari+Belajar!8m2!3d-6.1576987!4d107.4908498!16s%2Fg%2F11kbcyph19!3m5!1s0x2e6963e0d972c391:0x5c4e8c4c1fb0e1dc!8m2!3d-6.1576987!4d107.4908498!16s%2Fg%2F11kbcyph19!5m1!1e4?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D'>Lokasi Mari Belajar</a></li>
 </ul>
 </li>
-<li><a href='index.html'>E-Learning</a></li>
+<li><a href='desain_grafis.php'>E-Learning</a></li>
 <li><a href='Login.php'>Login</a></li>
        </ul>
        
@@ -536,8 +561,18 @@ if($sub){
 <section id="bagian-daftar">
 <div class="menu-card">
   <div class="menu-header">
-  
-            <h2>Les Komputer Mari Belajar</h2>
+  <div class="container23">
+        <!-- Tampilan jam real-time -->
+        <div class="jam-digital" id="jam">00:00:00</div>
+        
+        <!-- Tanggal PHP (Statis saat dimuat) -->
+        <div class="tanggal">
+            <?php 
+                echo date('l, d F Y');
+            ?>
+        </div>
+    </div>
+           <br>
               <!-- Tombol untuk membuka popup -->
     <button id="open-button">Informasi Penting</button>
 
@@ -758,7 +793,7 @@ Pendaftaran berhasil!
       <!--Bagian Akhir Whatsapp icon-->
 </div><!--div content-->
 <div class="footer"><!--bagian kaki websie-->
-<center><h2>LES KOMPUTER MARI BELAJAR</h2></center>
+
     <br>
     <!--Video--> <div id="video" Class="video"><iframe width="370" height="215" src="https://www.youtube.com/embed/fiuhu924--M?si=eC_k5DVhNTXhuUY2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><!--Akhir Video-->
 <section id="bagian-keuntungan">
@@ -896,7 +931,7 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
         <div class="menu-card">
         <div class="menu-header">
         <button class="tombol-animasi"  id="theme-toggle">Mode</button> 
-            <h1>Program Unggulan </h1>
+            <h2>Program Unggulan </h2>
            
             <p>Pilihan terbaik kami untuk Anda</p>
             
@@ -1132,4 +1167,28 @@ window.onclick = function(event) {
 
     </script>
 <script src="script.js"></script>
+
+
+<script>
+        function updateJam() {
+            const now = new Date();
+            let jam = now.getHours();
+            let menit = now.getMinutes();
+            let detik = now.getSeconds();
+
+            // Menambahkan nol di depan jika < 10
+            jam = (jam < 10) ? "0" + jam : jam;
+            menit = (menit < 10) ? "0" + menit : menit;
+            detik = (detik < 10) ? "0" + detik : detik;
+
+            const waktuString = jam + ":" + menit + ":" + detik;
+            document.getElementById("jam").innerText = waktuString;
+        }
+
+        // Jalankan fungsi setiap detik
+        setInterval(updateJam, 1000);
+        
+        // Panggil sekali agar tidak delay 1 detik saat *load* pertama
+        updateJam();
+    </script>
 </html>

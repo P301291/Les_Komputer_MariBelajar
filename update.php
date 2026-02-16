@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 ?>
 <html>
 <head>
-	<title>www.Batikazmil.com</title>
+	
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <style type="text/css">
 
