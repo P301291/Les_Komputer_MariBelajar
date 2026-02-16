@@ -176,26 +176,7 @@ include('function.php');
    </div>
    <div class="home_content">
     
-   <div class="text" style="color:white">Dashboard   <?php
-// Koneksi database
-$koneksi = mysqli_connect("localhost", "root", "", "db_user");
-
-// Query mengambil data
-$ukuran = "100%"; // Ukuran sisi
-$ukuran2 = "120px"; // Ukuran sisi
-$warna = "blue";   // Warna persegi
-$warna_text="white";
-$mrgn="1px";
-$pdg="right";
-$brd="20px 10px 20px 0px";
-$sql = "SELECT * FROM toy";
-$result = mysqli_query($koneksi, $sql);
-
-// Menghitung jumlah data
-$jumlah_data = mysqli_num_rows($result);
-echo "<div style='width: $ukuran2; height: $ukuran; background-color: $warna; color: $warna_text; margin:$mrgn;border-radius:$brd;float:$pdg'> <h4> 👨‍💼👩‍💼 $jumlah_data</h4></div>" ;
-
-?>
+   <div class="text" style="color:white">Dashboard   
 </div>  
    
 
@@ -245,7 +226,142 @@ echo "<div style='width: $ukuran2; height: $ukuran; background-color: $warna; co
     <br>
    <div class="row">
 
+   <div class="container">
+ 
+    
+    <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card blue">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <div class="card-content">
+                <h3>Total Pendaftar</h3>
+                <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
 
+// Query mengambil data
+$ukuran = "100%"; // Ukuran sisi
+$ukuran2 = "120px"; // Ukuran sisi
+$warna = "blue";   // Warna persegi
+$warna_text="black";
+$mrgn="1px";
+$pdg="right";
+$brd="20px 10px 20px 0px";
+$sql = "SELECT * FROM toy";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$mrgn;border-radius:$brd'> <h1> $jumlah_data</h1></div>" ;
+
+?>
+
+                <p class="desc">Sukses Terdaftar</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card green">
+            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+            <div class="card-content">
+                <h3>Laki-Laki</h3>
+                <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
+
+// Query mengambil data
+$sql = "SELECT * FROM toy";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+
+
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Laki-Laki'");
+$jumlah_l = mysqli_num_rows($query_l);
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Perempuan'");
+$jumlah_p = mysqli_num_rows($query_p);
+
+echo "<h1> " . $jumlah_l, "</h1>";
+
+
+?>
+
+                <p class="desc">Sukses</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card orange">
+            <div class="card-icon"><i class="fas fa-user"></i></div>
+            <div class="card-content">
+                <h3>Perempuan</h3>
+                <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
+
+// Query mengambil data
+$sql = "SELECT * FROM toy";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+
+
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Laki-Laki'");
+$jumlah_l = mysqli_num_rows($query_l);
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Jenis_Kelamin = 'Perempuan'");
+$jumlah_p = mysqli_num_rows($query_p);
+
+echo "<h1>" . $jumlah_p,"</h1>";
+?>
+
+                <p class="desc">Sukses</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card red">
+            <div class="card-icon"><i class="fas fa-user"></i></div>
+            <div class="card-content">
+                <h3>Diterima</h3>
+                <?php
+// Koneksi database
+$koneksi = mysqli_connect("localhost", "root", "", "db_user");
+
+// Query mengambil data
+$ukuran = "100%"; // Ukuran sisi
+$ukuran2 = "120px"; // Ukuran sisi
+$warna = "blue";   // Warna persegi
+$warna_text="black";
+$mrgn="1px";
+$pdg="right";
+$brd="20px 10px 20px 0px";
+$sql = "SELECT * FROM toy";
+$result = mysqli_query($koneksi, $sql);
+
+// Menghitung jumlah data
+$jumlah_data = mysqli_num_rows($result);
+echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$mrgn;border-radius:$brd'> <h1> $jumlah_data</h1></div>" ;
+
+?>
+
+                <p class="desc">Sukses</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
 
             <div class="col-sm-12">
                 <div class="table-responsive">

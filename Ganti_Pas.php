@@ -220,7 +220,7 @@ include('function.php');
           <th><strong>&#160; Username &#160</strong></th>
           <th><strong>&#160; Nama &#160</strong></th>          
           <th><strong>&#160; level &#160</strong></th>
-          <th><strong>&#160; Action &#160</strong></th>
+          <th><strong>&#160; Act &#160</strong></th>
           
           </tr>
         </thead>

@@ -316,7 +316,8 @@ function myFunction() {
           
           <?php } ?>
           <tr>
-          <td colspan="6" align="right"> Previous<?php echo $result["perpage"]; ?>Next &nbsp;<?php
+          <td colspan="6" align="right"> Previous<?php echo $result["perpage"]; ?>Next &nbsp;
+          <?php
 // Koneksi database
 $koneksi = mysqli_connect("localhost", "root", "", "db_user");
 
