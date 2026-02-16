@@ -262,7 +262,7 @@ echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$
 
         <!-- Card 2 -->
         <div class="card green">
-            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+            <div class="card-icon"><i class="fas fa-user"></i></div>
             <div class="card-content">
                 <h3>Laki-Laki</h3>
                 <?php
@@ -332,7 +332,7 @@ echo "<h1>" . $jumlah_p,"</h1>";
 
         <!-- Card 4 -->
         <div class="card red">
-            <div class="card-icon"><i class="fas fa-user"></i></div>
+            <div class="card-icon"><i class="fas fa-user-check"></i></div>
             <div class="card-content">
                 <h3>Diterima</h3>
                 <?php
