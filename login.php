@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 							if($_SESSION['level']==1){
 								header("location:Dashboard.php");
 							}elseif($_SESSION['level']==2){	
-								header("location:Data_Siswa.php");
+								header("location:Dashboard.php");
 							}
 
 							//

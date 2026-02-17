@@ -743,7 +743,7 @@ echo date('d/m/Y/l'); //kombinasi jam dan tanggal
                                 <input type="text" name="No_Hp" class="form-control"placeholder="masukan No WA"required>
                             </div>
                             <div class="mb-3">
-                                <button  type="submit"name="save_student"  class="btn btn-primary" onclick="tampilkanNotifikasiKustom()" >Daftar</button>
+                                <button  type="submit"name="save_student"  class="btn btn-primary">Daftar</button>
                                 <button type="reset" name="save_student" class="btn btn-primary">Reset</button>
                             </div>
                             
@@ -753,28 +753,13 @@ echo date('d/m/Y/l'); //kombinasi jam dan tanggal
         </div>
     </div>
 </fieldset>
-<div id="notifikasiSukses" style="display: none; padding: 20px; background-color:rgb(233, 29, 29); color: white; text-align: center; position: fixed; top: 0; width: 60%; z-index: 100;">
-Pendaftaran berhasil!
-</div>
+
     <section class="main">
       <div class="main-top">
         
       
       </div>
-     <script> 
-      function tampilkanNotifikasiKustom() {
-    var notifikasi = document.getElementById("notifikasiSukses");
-    alert("Terimakasih");
-    // Tampilkan notifikasi
-    notifikasi.style.display = "block";
-    
-    // Sembunyikan notifikasi setelah 10 detik (3000 milidetik)
-    setTimeout(function(){
-        notifikasi.style.display = "fixed";
-    }, 20000);
-}
 
-</script>
           </div> 
      
     </section>

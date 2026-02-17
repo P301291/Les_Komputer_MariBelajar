@@ -94,6 +94,88 @@ include('function.php');
     border-radius:10px;
 
 }
+
+
+
+
+.notification-container {
+    width: 100%;
+    max-width: 1300px;
+}
+
+.notification-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-left: 5px solid #2ecc71; /* Warna hijau untuk sukses */
+    border-right: 5px solid #2ecc71; /* Warna hijau untuk sukses */
+    border-top: 5px solid #2ecc71; /* Warna hijau untuk sukses */
+    border-bottom: 5px solid #2ecc71; /* Warna hijau untuk sukses */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.notification-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.notification-icon {
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.notification-icon.success {
+    color: #2ecc71;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.time {
+    font-size: 12px;
+    color: #888;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -4px;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
       </style>
    </head>
 <body class="scroll">
@@ -268,19 +350,34 @@ echo "Admin: " . $jumlah_data;
     </div>
     </center>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+<div class="notification-container">
+        <!-- Card Notifikasi -->
+        <div class="notification-card">
+            <div class="notification-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="notification-content">
+                <div class="notification-header">
+                    <h3>Informasi Penggunaan</h3>
+                    <br>
+                    <span class="time">Info Penting</span>
+                </div>
+                <p>1. Admin level 1 mempunyai akses penuh untuk mengelola bagian backend.</p>
+                <p>2. Admin level 2 tidak bisa menambahkan, menghapus dan merubah user/admin.</p>
+                <p>3. Untuk level hanya 1 dan 2 saja.</p>
+                <p>4. Admin level 2 bisa mengelola halaman yang lain kecuali halaman admin.</p>
+               <!-- <p>Pembayaran sebesar Rp 150.000 untuk paket Premium telah diterima.</p>
+                <p>Pembayaran sebesar Rp 150.000 untuk paket Premium telah diterima.</p>-->
+            </div>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
 
 
 
-
-
+<br>
 
 <div class="Bagian_Bawah">
 <br>

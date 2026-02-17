@@ -73,6 +73,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	}
 	
 	body{background-Color:green;}
+
+	.btn-primary2{ 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:rgb(19, 6, 133);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 </style>
 </head>
 <body>
@@ -115,8 +126,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 	</div>
 	<div class="form-group">
-		<input class="btn-primary" type="submit" name="kirim" value="Daftar" />
-		  <input type="button" value="Go Back" onclick="history.back(1)" />
+		<input class="btn-primary2" type="submit" name="kirim" value="Daftar" />
+		  <a class="btn-primary2" href="Ganti_Pas.php">Back</a>
 	</div>
 	
 	</form>
