@@ -390,7 +390,6 @@ button#open-button:hover{transform: scale(1.1);
 <li><a href='https://www.google.com/maps/place/Mari+Belajar/@-6.1576294,107.4902235,153m/data=!3m1!1e3!4m14!1m7!3m6!1s0x2e6963e0d972c391:0x5c4e8c4c1fb0e1dc!2sMari+Belajar!8m2!3d-6.1576987!4d107.4908498!16s%2Fg%2F11kbcyph19!3m5!1s0x2e6963e0d972c391:0x5c4e8c4c1fb0e1dc!8m2!3d-6.1576987!4d107.4908498!16s%2Fg%2F11kbcyph19!5m1!1e4?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D'>Lokasi Mari Belajar</a></li>
 </ul>
 </li>
-<li><a href='desain_grafis.php'>E-Learning</a></li>
 <li><a href='Login.php'>Login</a></li>
        </ul>
        
