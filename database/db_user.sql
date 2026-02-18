@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2026 at 05:11 PM
+-- Generation Time: Feb 17, 2026 at 03:33 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -19,6 +19,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_user`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_notes`
+--
+
+CREATE TABLE IF NOT EXISTS `admin_notes` (
+  `id` int(20) NOT NULL DEFAULT '0',
+  `note_text` text NOT NULL,
+  ` created_at` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -122,15 +134,18 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
   `password` varchar(255) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `level` char(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `username`, `password`, `nama`, `level`) VALUES
-(20, 'admin', '$2y$10$jRQne0XexAURLV9q8ZoY0.mkQBzzwE.PasDQcqR9mRJZMhM2Zb5Pm', 'Candra', '1'),
-(21, 'admin123', '$2y$10$n4c/SY05aaMeNj/LARNTHO71VjYZFZMFYDZCpbwer2qqXiIwjESq.', 'Raka Candra', '2');
+(23, 'admin', '$2y$10$Z1hQt1n9CdpayLbmcNmL9OkOr2IQVO2st7M6rd7G0JsQtpZtW8YOK', 'Raka Candra', '1'),
+(24, 'admin12', '$2y$10$FhGls0AD0oPw/UgtUztut.QGY.XT0ty0LMI/7aFQchpxS4woVmOEK', 'Azri Faiz AlHafidz', '1'),
+(25, 'admin123', '$2y$10$yM9TjzwdnhLztvp3gqdRXOTTBWEz4AZoRRejGw63/W8gORUnYuFYa', 'Arya Sandi', '2'),
+(26, 'admin301', '$2y$10$n1eelv0NUAWsDv3ICO6LPOZYouMlzzms8MATiH0IGH/PvtsX8Li5C', 'Reni Anggraeni', '2'),
+(28, 'admin101', '$2y$10$cyue9TqoAg8VyqzdtpU9oekri0BwVvKQCTj/0ST5q30ygIOY0Nd3y', 'Hadi', '2');
 
 -- --------------------------------------------------------
 
@@ -146,59 +161,55 @@ CREATE TABLE IF NOT EXISTS `toy` (
   `Alamat` varchar(100) NOT NULL,
   `Date` varchar(400) NOT NULL,
   `No_Hp` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1043 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1033 ;
 
 --
 -- Dumping data for table `toy`
 --
 
 INSERT INTO `toy` (`id`, `Nama`, `Jenis_Kelamin`, `Kursus`, `Alamat`, `Date`, `No_Hp`) VALUES
-(1001, 'Candra', 'Laki-Laki', 'Komputer Kls 3 (12 x P)', 'Ciparagejaya', '02/01/2026/Friday', '085776821436'),
-(1002, 'Rani', 'Perempuan', 'Komputer Kls 1 (8 x P)', 'Cibanjar', '02/01/2026/Friday', '085776821436'),
-(1003, 'Fadli', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1004, 'Rahmat', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Cibanjar', '03/01/2026/Saturday', '085776821436'),
-(1005, 'Rohatin', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1006, 'Azri Faiz', 'Laki-Laki', 'Komputer Kls 3 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1007, 'Wahidik', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1008, 'Ayunin', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1009, 'Faiz', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1010, 'Masni', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1011, 'Farhan', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Tempuan', '03/01/2026/Saturday', '085776821436'),
-(1012, 'Wastirah', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '08577683276'),
-(1013, 'Adil', 'Laki-Laki', 'Komputer Kls 3 (8 x P)', 'Pulomulya', '03/01/2026/Saturday', '085776821436'),
-(1014, 'Dadan', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '08577683276'),
-(1015, 'Sarif', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1016, 'Rahmawati', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1017, 'Warsih', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1018, 'Darma', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1019, 'Arianti', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Cianjur', '03/01/2026/Saturday', '085776821436'),
-(1020, 'Warna', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1021, 'Rani Mardia', 'Perempuan', 'Komputer Kls 3 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1022, 'Rahwi', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1023, 'Warni', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1024, 'Endi', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1025, 'Candra', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Cibanjar', '03/01/2026/Saturday', '085776821436'),
-(1026, 'Wisnu', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Dongel', '03/01/2026/Saturday', '085776821436'),
-(1027, 'Dani', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '085776821436'),
-(1028, 'Fasha', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1029, 'Warsan', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '08577683276'),
-(1030, 'Galing', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1031, 'Dani Rasta', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Pulomulya', '03/01/2026/Saturday', '085776821436'),
-(1032, 'Rasminah', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1033, 'Nanang', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1034, 'Masni', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1035, 'Erasiman', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1036, 'Kasih', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1037, 'Erna', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1038, 'Tarman', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1039, 'Rasami', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1040, 'Jajang', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1041, 'Rastam', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '085776821436'),
-(1042, 'Harun', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Cibanjar', '21/01/2026/Wednesday', '085776821436');
+(1001, 'Candra', 'Laki-Laki', 'Komputer Kls 3 (12 x P)', 'Ciparagejaya', '02/01/2026/Friday', '85776821436'),
+(1002, 'Rani', 'Perempuan', 'Komputer Kls 1 (8 x P)', 'Cibanjar', '02/01/2026/Friday', '85776821436'),
+(1003, 'Fadli', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1004, 'Rahmat', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Cibanjar', '03/01/2026/Saturday', '85776821436'),
+(1005, 'Rohatin', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1006, 'Azri Faiz', 'Laki-Laki', 'Komputer Kls 3 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1007, 'Wahidik', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1008, 'Ayunin', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1009, 'Faiz', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1010, 'Masni', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1011, 'Farhan', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Tempuan', '03/01/2026/Saturday', '85776821436'),
+(1012, 'Wastirah', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '8577683276'),
+(1013, 'Adil', 'Laki-Laki', 'Komputer Kls 3 (8 x P)', 'Pulomulya', '03/01/2026/Saturday', '85776821436'),
+(1014, 'Dadan', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '8577683276'),
+(1015, 'Sarif', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1016, 'Rahmawati', 'Perempuan', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1017, 'Warsih', 'Perempuan', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1018, 'Darma', 'Laki-Laki', 'Komputer Kls 2 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1019, 'Arianti', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Cianjur', '03/01/2026/Saturday', '85776821436'),
+(1020, 'Warna', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1021, 'Rani Mardia', 'Perempuan', 'Komputer Kls 3 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1022, 'Rahwi', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1023, 'Warni', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1024, 'Endi', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1025, 'Candra', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Cibanjar', '03/01/2026/Saturday', '85776821436'),
+(1026, 'Wisnu', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Dongel', '03/01/2026/Saturday', '85776821436'),
+(1027, 'Dani', 'Laki-Laki', 'Komputer Kls 2 (8 x P)', 'Ciparagejaya', '03/01/2026/Saturday', '85776821436'),
+(1028, 'Fasha', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1029, 'Warsan', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Tempuran', '03/01/2026/Saturday', '8577683276'),
+(1030, 'Galing', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436'),
+(1031, 'Dani Rasta', 'Laki-Laki', 'Komputer Kls 1 (12 x P)', 'Pulomulya', '03/01/2026/Saturday', '85776821436'),
+(1032, 'Rasminah2', 'Laki-Laki', 'Komputer Kls 1 (8 x P)', 'Tempuran', '03/01/2026/Saturday', '85776821436');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_notes`
+--
+ALTER TABLE `admin_notes`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `gambar`
@@ -275,12 +286,12 @@ MODIFY `id_gambar` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-MODIFY `id` int(13) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `id` int(13) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `toy`
 --
 ALTER TABLE `toy`
-MODIFY `id` int(80) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1043;
+MODIFY `id` int(80) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1033;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

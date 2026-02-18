@@ -302,15 +302,14 @@ body{
 }
 
 #toys-grid .txt-heading {
-    background-color: white;
+    background-color: rgb(226, 220, 220);
 
 }
 
 #toys-grid table {
-  padding:0px;
-  
+  padding:1px;
     width: 100%;
-    background-color: rgb(15, 201, 77);
+    background-color: rgb(199, 208, 205);
        border: 0px solid black;
         color: rgb(15, 1, 1);
          font-size:8x;
@@ -326,7 +325,7 @@ body{
   
   width: 100%;
     border: 0px solid black;
-    background-color:whitesmoke;
+    background-color:rgb(228, 237, 233);
     margin: 0px 0px;
 
 }
