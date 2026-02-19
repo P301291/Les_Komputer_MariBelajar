@@ -101,6 +101,77 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
     border-radius: 8px; /* Sudut tumpul */
  
 }
+
+
+/* css progres */
+.course-container {
+    background-color: white;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    border-right: 5px solid green;
+            border-left: 5px solid green;
+            border-bottom: 2px solid #5ddd21;
+            border-top: 2px solid #5ddd21;
+
+}
+
+h5 {
+    margin-top: 0;
+    color: #333;
+    float:left;
+    text-align: left;
+}
+
+.stats {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.progress-wrapper {
+    background-color:rgb(201, 194, 194);
+    border-radius: 20px;
+    padding: 3px; /* Jarak antara background dan fill */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+    border-radius: 20px;
+    overflow: hidden; /* Memastikan isian tidak keluar dari border radius */
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Warna hijau */
+    height: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Posisi teks persentase di kanan */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+    box-sizing: border-box;
+    
+    /* Animasi saat loading */
+    animation: loadProgress 1.5s ease-in-out;
+}
+
+.status-text {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Animasi progress bar */
+@keyframes loadProgress {
+    from { width: 0%; }
+    to { width: 75%; } /* Sesuaikan dengan width di HTML */
+}
+
       </style>
    </head>
 <body class="scroll">
@@ -373,45 +444,105 @@ echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$
     </div>
 </div>
 <br>
+<div class="course-container">
+        <h5>1. Progress Pendaftaran Pembelajaran Dasar-Dasar Komputer, Microsoft Office, Internet. Kelas 1</h5>
+        <br>
+        <p class="stats"> Peserta Terdaftar</p>
+        
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <!-- Ubah width di style inline ini untuk menyesuaikan persentase -->
+                <div class="progress-fill" style="width: 75%;">
+                    <span class="progress-percentage"><?php
+$conn = mysqli_connect("localhost", "root", "", "db_user");
 
-            <div class="col-sm-12">
-                <div class="table-responsive">
-                    <table class="table table-bordered" width='100%'cellspacing="0">
-                        <thead>
-                            
-                              
-                                <dd width='100%' height='12px'>
-                              
-                           
-                        </thead>
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 1 (8 x P)'");
+$jumlah_l = mysqli_num_rows($query_l);
 
-                        <tbody>
-                        	
-                        <?php
-                            // include database
-                            include 'database.php';
-                            // perintah sql untuk menampilkan daftar bank yang berelasi dengan tabel kategori bank
-                            $sql="select * from tb_header order by id_gambar desc";
-                            $hasil=mysqli_query($kon,$sql);
-                            $no=0;
-                            //Menampilkan data dengan perulangan while
-                            while ($data = mysqli_fetch_array($hasil)):
-                            $no++;
-                        ?>
-                        
-                            	
-                            <img src="gambar/<?php echo $data['gambar'];?>" class="rounded" width='100%'alt="Cinque Terre">    
-                        <!-- bagian akhir (penutup) while -->
-                        <?php endwhile; ?>
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 1 (12 x P)'");
+$jumlah_p = mysqli_num_rows($query_p);
 
-                        </tbody>
-                    </table>
-                            </form>
-              
+echo "&nbsp;(8 X P: " . $jumlah_l;
+echo "&nbsp;)";
+echo "&nbsp;(12 x P: " . $jumlah_p;
+echo "&nbsp;)&nbsp;";
+
+
+?></span>
                 </div>
-     
+                
+            </div>
+        </div>
+    </div>
                               
-                            <div class="Bagian_Bawah2">
+    <div class="course-container">
+        <h5>2. Progress Pendaftaran Pembelajaran UI/UX Design, Desain Grafis, Editing Video. Kelas 2</h5>
+        <br>
+        <p class="stats"> Peserta Terdaftar</p>
+        
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <!-- Ubah width di style inline ini untuk menyesuaikan persentase -->
+                <div class="progress-fill" style="width: 75%;">
+                    <span class="progress-percentage"><?php
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 2 (8 x P)'");
+$jumlah_l = mysqli_num_rows($query_l);
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 2 (12 x P)'");
+$jumlah_p = mysqli_num_rows($query_p);
+
+echo "&nbsp;(8 X P: " . $jumlah_l;
+echo "&nbsp;)";
+echo "&nbsp;(12 x P:" . $jumlah_p;
+echo "&nbsp;)&nbsp;";
+
+
+?></span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="course-container">
+        <h5>3.Progress Pendaftaran Pembelajaran Pengembangan Aplikasi Web, Aplikasi Desktop, VBA Excel. Kelas 3</h5>
+        <br>
+        <p class="stats"> Peserta Terdaftar</p>
+        
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <!-- Ubah width di style inline ini untuk menyesuaikan persentase -->
+                <div class="progress-fill" style="width: 75%;">
+                    <span class="progress-percentage"><?php
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+$query_l = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 3 (8 x P)'");
+$jumlah_l = mysqli_num_rows($query_l);
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Kursus = 'Komputer Kls 3 (12 x P)'");
+$jumlah_p = mysqli_num_rows($query_p);
+
+echo "&nbsp;(8 X P: " . $jumlah_l;
+echo "&nbsp;)";
+echo "&nbsp;(12 x P:" . $jumlah_p;
+echo "&nbsp;)&nbsp;";
+
+
+?></span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="Bagian_Bawah2">
                               <br>
                               <br>
                               <br>
@@ -438,7 +569,9 @@ echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$
                               <br>
                               <br>
                               <br>
-                  
+                              <br>
+                              <br>
+                     
                             
                               <br>
                             <hr width="97%">

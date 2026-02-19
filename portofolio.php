@@ -12,7 +12,7 @@
         <div class="container">
             <img src="gambar/candra.png" alt="Foto Profil" class="profile-img">
             <h2>Candra Argadinata, S.Kom</h2>
-            <p>Guru Informatika | Spesialis Programming</p>
+            <p>Guru Informatika | S1, Teknik Informatika</p>
         </div>
     </header>
 
