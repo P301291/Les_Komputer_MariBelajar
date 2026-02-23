@@ -1,8 +1,41 @@
 <?php
+// 1. Koneksi ke Database
+$host = "localhost";
+$user = "root"; // sesuaikan
+$pass = ""; // sesuaikan
+$db   = "db_user"; // sesuaikan
+
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+}
+
+// 2. Hitung Jumlah Laki-laki dan Perempuan
+$queryL = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Jenis_Kelamin = 'Laki-Laki'");
+$dataL = mysqli_fetch_assoc($queryL);
+$totalL = $dataL['total'];
+
+$queryP = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Jenis_Kelamin = 'Perempuan'");
+$dataP = mysqli_fetch_assoc($queryP);
+$totalP = $dataP['total'];
+
+$totalSemua = $totalL + $totalP;
+
+// Hindari pembagian dengan nol jika data kosong
+$persenL = ($totalSemua > 0) ? ($totalL / $totalSemua) * 100 : 0;
+$persenP = ($totalSemua > 0) ? ($totalP / $totalSemua) * 100 : 0;
+?>
+<?php
+// Simulasi loading lambat selama 3 detik
+// Hapus atau komentari baris ini jika digunakan di produksi
+sleep(2);
+?>
+<?php
 session_start();
 
 // Set the inactivity time of 15 minutes (900 seconds)
-$inactivity_time = 10 * 20;
+$inactivity_time = 15 * 25;
 
 // Check if the last_timestamp is set
 // and last_timestamp is greater then 15 minutes or 9000 seconds
@@ -88,6 +121,79 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <style>
+        /* 1. CSS untuk Overlay Loading */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Warna background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Pastikan paling atas */
+            transition: opacity 0.5s ease;
+        }
+
+        /* 2. CSS untuk Spinner/Animasi */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db; /* Warna spinner */
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        /* 3. Animasi Putar */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(390deg); }
+        }
+
+        /* Konten Utama (Disembunyikan saat loading) */
+     
+    </style>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; }
+        
+        /* Container Grafik */
+        .chart-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            /* Warna Laki-laki (biru) dan Perempuan (merah muda) */
+            background: conic-gradient(
+                #3498db 0% <?php echo $persenL; ?>%, 
+                #e74c3c <?php echo $persenL; ?>% 100%
+            );
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        /* Membuat efek donat (tengah bolong) */
+        .chart-container::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Legenda dan Keterangan */
+        .legend { margin-top: 20px; text-align: left; }
+        .legend-item { display: inline-block; margin: 0 10px; }
+        .color-box { width: 15px; height: 15px; display: inline-block; margin-right: 5px; }
+        .l-color { background-color: #3498db; }
+        .p-color { background-color: #e74c3c; }
+        .total-text { margin-top: 10px; font-weight: bold; }
+    </style>
+     <style>
         .fieldset{background-color: #4CAF50; /* Warna hijau */
     border: none;
     color: white;
@@ -119,6 +225,7 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
 
 h5 {
     margin-top: 0;
+    word-break: break-word; 
     color: #333;
     float:left;
     text-align: left;
@@ -261,7 +368,30 @@ h5 {
    <div class="text" style="color:white">Dashboard   
 </div>  
    
+<div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
 
+    <!-- Konten Utama -->
+    <div id="main-content">
+     
+    </div>
+    <script>
+        // 4. JavaScript untuk menyembunyikan loading setelah konten dimuat
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            var mainContent = document.getElementById('main-content');
+            
+            // Beri sedikit delay agar transisi mulus
+            setTimeout(function() {
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 500); // Waktu transisi opacity
+            }, 500);
+        });
+    </script>
 
   <!-- <section class="main">
       <div class="main-top">
@@ -541,8 +671,23 @@ echo "&nbsp;)&nbsp;";
             </div>
         </div>
     </div>
+    
+    <h5>Pendaftar Berdasarkan Kelamin</h5>
+    <br>
+    <div class="chart-container"></div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="color-box l-color"></span> Laki-laki: <?php echo $totalL; ?>
+        </div>
+        <div class="legend-item">
+            <span class="color-box p-color"></span> Perempuan: <?php echo $totalP; ?>
+        </div>
+        <div class="total-text">Total: <?php echo $totalSemua; ?></div>
+    </div>
     <br>
     <div class="Bagian_Bawah2">
+    <br>
                               <br>
                               <br>
                               <br>
@@ -567,16 +712,15 @@ echo "&nbsp;)&nbsp;";
                               <br>
                               <br>
                               <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
+                             
                      
                             
                               <br>
                             <hr width="97%">
                             <div class="container">
 <br>
+ <br>
+                          
                             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">

@@ -939,11 +939,10 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
     </div>
 </div>
    <div class="container">
-        <p>Silahkan Daftar</p>
+       <!-- <p>Silahkan Daftar</p>-->
         <!-- Tombol untuk membuka pop-up -->
-        <a class ="btndaftar" href="student-create2.php">Daftar Sekarang</a>
-        <br>
-        <br>
+        <!--<a class ="btndaftar" href="student-create2.php">Daftar Sekarang</a>-->
+       
     </div>
         <div class="footer_terakhir">
     
@@ -974,7 +973,7 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
         </div>
 
         <div class="footer-section contact">
-            <h1>Kontak Kami</h1><br>
+            <h1>Kontak Kami</h1>
             <span><i class="fas fa-user "></i>&#160;Candra Argadinata, S.Kom</span><br>
             <span><i class="fas fa-phone "></i>&#160;085776821436</span><br>
             <span class="fas fa-envelope">&#160;<a href="https://mail.google.com/mail/?view=cm&fs=1&to=candra.argadinata1234@gmail.com" target="_blank" style="color:white"><em>candra.argadinata1234@gmail.com</em></a></span><br>

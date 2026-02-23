@@ -1,3 +1,8 @@
+<?php
+// Simulasi loading lambat selama 3 detik
+// Hapus atau komentari baris ini jika digunakan di produksi
+sleep(2);
+?>
 <!DOCTYPE html> <!--Sudah pakai HTML 5-->
 <?php
 include('koneksi.php');
@@ -80,6 +85,9 @@ $(".reveal").on('click',function() {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style_login.css"><!--CSS Eksternal-->
 <style>
+	
+
+	
 h2{color:brown};
 	.error-form{
 		color: red;
@@ -87,9 +95,67 @@ h2{color:brown};
 		body{background-image: url("gambar/lo.jpg") ;
 			 }
 </style>
+<style>
+        /* 1. CSS untuk Overlay Loading */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Warna background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Pastikan paling atas */
+            transition: opacity 0.5s ease;
+        }
+
+        /* 2. CSS untuk Spinner/Animasi */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db; /* Warna spinner */
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        /* 3. Animasi Putar */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(390deg); }
+        }
+
+        /* Konten Utama (Disembunyikan saat loading) */
+     
+    </style>
 </head>
 <body>
+<div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
 
+    <!-- Konten Utama -->
+    <div id="main-content">
+     
+    </div>
+    <script>
+        // 4. JavaScript untuk menyembunyikan loading setelah konten dimuat
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            var mainContent = document.getElementById('main-content');
+            
+            // Beri sedikit delay agar transisi mulus
+            setTimeout(function() {
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 500); // Waktu transisi opacity
+            }, 500);
+        });
+    </script>
 <br>
 <br>
 

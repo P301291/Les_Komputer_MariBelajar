@@ -281,8 +281,8 @@ function myFunction() {
       <div class="dropdown">
   <button class="dropbtn" >Menu Tombol Eksekusi</button>
   <div class="dropdown-content">
- <!-- <a href="student-create2.php">Tambah</a>-->
-  <a href="cetak.php">Cetak</a>
+ <a href="student-create2.php">Tambah</a>
+   <a href="cetak.php">Cetak</a>
   <a href="excel.php">Ekspor Excel</a>
     <a href="import-excel/index6.php">Impor Excel</a>
   </div>
