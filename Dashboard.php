@@ -156,6 +156,98 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
      
     </style>
     <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+.main-wrapper {
+    display: flex;
+    min-height: 20vh;
+   
+}
+
+/* Styling Kartu - Kiri */
+.info-card {
+    width: 70%;
+    background-color: #fff;
+    padding: 10px;
+    border-right: 5px solid green;
+            border-left: 5px solid green;
+            border-bottom: 2px solid #5ddd21;
+            border-top: 2px solid #5ddd21;
+            border-radius: 10px; /* Sudut tumpul */
+    top: 0;
+    height: 64vh;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header h3 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-img {
+    width: 10px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling Konten Utama */
+.content2 {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Responsif: Mobile (Layar kecil) */
+@media screen and (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    .info-card {
+        width: 100%;
+        height: auto;
+        position: relative; /* Tidak sticky lagi di mobile */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+      </style>
+    <style>
         body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; }
         
         /* Container Grafik */
@@ -574,6 +666,39 @@ echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$
     </div>
 </div>
 <br>
+    <div class="main-wrapper">
+        <!-- Kartu Info Kiri -->
+        <div class="info-card" id="myCard">
+            <div class="card-header">
+                <h3>Informasi</h3>
+            </div>
+            <div class="card-body">
+            <p style="text-align: left;">Selamat datang! Ini adalah panel informasi samping.</p>    
+            </div>
+        </div>
+        &#160;
+        <!-- Konten Utama -->
+        <div class="info-card" id="myCard">
+        <div class="content2">
+          <center>
+       <dd> <h4>Pendaftar Berdasarkan Kelamin</h4></dd>
+    <br>
+    <div class="chart-container"></div>
+
+    <div class="legend">
+        <div class="legend-item">
+         <center>   <span class="color-box l-color"></span> Laki-laki: <?php echo $totalL; ?>
+        </div>
+        <div class="legend-item">
+            <span class="color-box p-color"></span> Perempuan: <?php echo $totalP; ?>
+        </div>
+        <div class="total-text">Total: <?php echo $totalSemua; ?></div>
+      </center>
+    </div>
+    </div>
+      </div>
+      </div>
+      <br>
 <div class="course-container">
         <h5>1. Progress Pendaftaran Pembelajaran Dasar-Dasar Komputer, Microsoft Office, Internet. Kelas 1</h5>
         <br>
@@ -606,7 +731,7 @@ echo "&nbsp;)&nbsp;";
             </div>
         </div>
     </div>
-                              
+      <br>                        
     <div class="course-container">
         <h5>2. Progress Pendaftaran Pembelajaran UI/UX Design, Desain Grafis, Editing Video. Kelas 2</h5>
         <br>
@@ -639,6 +764,7 @@ echo "&nbsp;)&nbsp;";
             </div>
         </div>
     </div>
+    <br> 
     <div class="course-container">
         <h5>3.Progress Pendaftaran Pembelajaran Pengembangan Aplikasi Web, Aplikasi Desktop, VBA Excel. Kelas 3</h5>
         <br>
@@ -671,23 +797,15 @@ echo "&nbsp;)&nbsp;";
             </div>
         </div>
     </div>
-    
-    <h5>Pendaftar Berdasarkan Kelamin</h5>
-    <br>
-    <div class="chart-container"></div>
+  <br>
 
-    <div class="legend">
-        <div class="legend-item">
-            <span class="color-box l-color"></span> Laki-laki: <?php echo $totalL; ?>
-        </div>
-        <div class="legend-item">
-            <span class="color-box p-color"></span> Perempuan: <?php echo $totalP; ?>
-        </div>
-        <div class="total-text">Total: <?php echo $totalSemua; ?></div>
-    </div>
-    <br>
     <div class="Bagian_Bawah2">
     <br>
+                      
+                              <br>
+                              <br>
+                              <br>
+                              <br>
                               <br>
                               <br>
                               <br>
