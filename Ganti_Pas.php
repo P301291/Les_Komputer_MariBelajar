@@ -368,6 +368,7 @@ echo "Admin: " . $jumlah_data;
                 <p>2. Admin level 2 tidak bisa menambahkan, menghapus dan merubah user/admin.</p>
                 <p>3. Untuk level hanya 1 dan 2 saja.</p>
                 <p>4. Admin level 2 bisa mengelola halaman yang lain kecuali halaman admin.</p>
+                <p>5. Peserta yang mendaftar harus di verifikasi (fitur verifikasi ada di halaman data siswa).</p>
                <!-- <p>Pembayaran sebesar Rp 150.000 untuk paket Premium telah diterima.</p>
                 <p>Pembayaran sebesar Rp 150.000 untuk paket Premium telah diterima.</p>-->
             </div>

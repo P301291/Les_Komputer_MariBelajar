@@ -9,9 +9,10 @@ if(isset($_POST['save_student']))
     $course = mysqli_real_escape_string($con, $_POST['Alamat']);
     $Date = mysqli_real_escape_string($con, $_POST['Date']);
     $Wa = mysqli_real_escape_string($con, $_POST['No_Hp']);
+    $Setatus = mysqli_real_escape_string($con, $_POST['Setatus']);
 
 
-    $query = "INSERT INTO toy (id,Nama,Jenis_Kelamin,Kursus,Alamat,Date,No_Hp) VALUES ('$student_id','$name','$email','$phone','$course','$Date','$Wa')";
+    $query = "INSERT INTO toy (id,Nama,Jenis_Kelamin,Kursus,Alamat,Date,No_Hp,Setatus) VALUES ('$student_id','$name','$email','$phone','$course','$Date','$Wa','$Setatus')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)

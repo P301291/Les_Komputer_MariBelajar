@@ -1,4 +1,18 @@
 <?php
+session_start(); // Wajib di paling atas
+
+// Pengecekan: Apakah user sudah login?
+if (!isset($_SESSION['nama'])) {
+    // Jika tidak ada session, lempar kembali ke halaman login
+    header("Location: login.php");
+    exit;
+}
+
+// Ambil data dari session
+$user_login = $_SESSION['nama'];
+?>
+
+<?php
 // 1. Koneksi ke Database
 $host = "localhost";
 $user = "root"; // sesuaikan
@@ -12,11 +26,11 @@ if (!$conn) {
 }
 
 // 2. Hitung Jumlah Laki-laki dan Perempuan
-$queryL = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Jenis_Kelamin = 'Laki-Laki'");
+$queryL = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Setatus = 'Diterima'");
 $dataL = mysqli_fetch_assoc($queryL);
 $totalL = $dataL['total'];
 
-$queryP = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Jenis_Kelamin = 'Perempuan'");
+$queryP = mysqli_query($conn, "SELECT count(*) as total FROM toy WHERE Setatus = 'Masih Proses'");
 $dataP = mysqli_fetch_assoc($queryP);
 $totalP = $dataP['total'];
 
@@ -28,11 +42,11 @@ $persenP = ($totalSemua > 0) ? ($totalP / $totalSemua) * 100 : 0;
 ?>
 <?php
 // Simulasi loading lambat selama 3 detik
-// Hapus atau komentari baris ini jika digunakan di produksi
+// Hapus atau komentari baris ini jika digunakan di produksi ganti lahgi ini (session_start();)
 sleep(2);
 ?>
 <?php
-session_start();
+
 
 // Set the inactivity time of 15 minutes (900 seconds)
 $inactivity_time = 15 * 25;
@@ -184,9 +198,10 @@ body {
             border-top: 2px solid #5ddd21;
             border-radius: 10px; /* Sudut tumpul */
     top: 0;
-    height: 64vh;
+    height: 79vh;
     transition: all 0.3s ease;
     display: flex;
+    word-break: break-word;
     flex-direction: column;
 }
 
@@ -243,6 +258,7 @@ button:hover {
 
     .content {
         padding: 20px;
+        
     }
 }
 
@@ -252,9 +268,10 @@ button:hover {
         
         /* Container Grafik */
         .chart-container {
+          
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 225px;
+            height: 225px;
             border-radius: 50%;
             /* Warna Laki-laki (biru) dan Perempuan (merah muda) */
             background: conic-gradient(
@@ -262,11 +279,14 @@ button:hover {
                 #e74c3c <?php echo $persenL; ?>% 100%
             );
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            word-break: break-word;
         }
 
         /* Membuat efek donat (tengah bolong) */
         .chart-container::before {
             content: "";
+           
+            word-break: break-word;
             position: absolute;
             width: 120px;
             height: 120px;
@@ -342,7 +362,7 @@ h5 {
 }
 
 .progress-fill {
-    background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Warna hijau */
+    background: linear-gradient(40deg, #4CAF50, #8BC34A); /* Warna hijau */
     height: 25px;
     border-radius: 20px;
     display: flex;
@@ -368,7 +388,7 @@ h5 {
 /* Animasi progress bar */
 @keyframes loadProgress {
     from { width: 0%; }
-    to { width: 75%; } /* Sesuaikan dengan width di HTML */
+    to { width: 35%; } /* Sesuaikan dengan width di HTML */
 }
 
       </style>
@@ -447,8 +467,8 @@ h5 {
          <div class="user_details">
            <img decoding="async" src="gambar/mb21.png" alt="">
            <div class="name_job">
-             <div class="name">Mari Belajar</div>
-             <div class="job">Bimbingan Belajar Komputer</div>
+             <div class="name"><h4><?php echo $user_login; ?></h4></div>
+             <div class="job">Admin Mari Belajar</div>
            </div>
          </div>
      
@@ -459,7 +479,8 @@ h5 {
     
    <div class="text" style="color:white">Dashboard   
 </div>  
-   
+   <!-- Menampilkan nama akun -->
+
 <div id="loading-screen">
         <div class="spinner"></div>
     </div>
@@ -644,22 +665,24 @@ echo "<h1>" . $jumlah_p,"</h1>";
 $koneksi = mysqli_connect("localhost", "root", "", "db_user");
 
 // Query mengambil data
-$ukuran = "100%"; // Ukuran sisi
-$ukuran2 = "120px"; // Ukuran sisi
-$warna = "blue";   // Warna persegi
-$warna_text="black";
-$mrgn="1px";
-$pdg="right";
-$brd="20px 10px 20px 0px";
 $sql = "SELECT * FROM toy";
 $result = mysqli_query($koneksi, $sql);
 
 // Menghitung jumlah data
 $jumlah_data = mysqli_num_rows($result);
-echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$mrgn;border-radius:$brd'> <h1> $jumlah_data</h1></div>" ;
 
+
+$conn = mysqli_connect("localhost", "root", "", "db_user");
+
+// Hitung laki-laki
+
+
+// Hitung perempuan
+$query_p = mysqli_query($conn, "SELECT id FROM toy WHERE Setatus = 'Diterima'");
+$jumlah_D = mysqli_num_rows($query_p);
+
+echo "<h1>" . $jumlah_D,"</h1>";
 ?>
-
                 <p class="desc">Sukses</p>
             </div>
         </div>
@@ -672,37 +695,11 @@ echo "<div style='width: $ukuran2; height: $ukuran; color: $warna_text; margin:$
             <div class="card-header">
                 <h3>Informasi</h3>
             </div>
-            <div class="card-body">
-            <p style="text-align: left;">Selamat datang! Ini adalah panel informasi samping.</p>    
-            </div>
-        </div>
-        &#160;
-        <!-- Konten Utama -->
-        <div class="info-card" id="myCard">
-        <div class="content2">
-          <center>
-       <dd> <h4>Pendaftar Berdasarkan Kelamin</h4></dd>
-    <br>
-    <div class="chart-container"></div>
-
-    <div class="legend">
-        <div class="legend-item">
-         <center>   <span class="color-box l-color"></span> Laki-laki: <?php echo $totalL; ?>
-        </div>
-        <div class="legend-item">
-            <span class="color-box p-color"></span> Perempuan: <?php echo $totalP; ?>
-        </div>
-        <div class="total-text">Total: <?php echo $totalSemua; ?></div>
-      </center>
-    </div>
-    </div>
-      </div>
-      </div>
-      <br>
-<div class="course-container">
-        <h5>1. Progress Pendaftaran Pembelajaran Dasar-Dasar Komputer, Microsoft Office, Internet. Kelas 1</h5>
+            <div class="card-body">   
+            <div class="course-container">
+        <h5>1. Progress Kelas 1</h5>
         <br>
-        <p class="stats"> Peserta Terdaftar</p>
+        <p class="stats"></p>
         
         <div class="progress-wrapper">
             <div class="progress-bar">
@@ -733,9 +730,9 @@ echo "&nbsp;)&nbsp;";
     </div>
       <br>                        
     <div class="course-container">
-        <h5>2. Progress Pendaftaran Pembelajaran UI/UX Design, Desain Grafis, Editing Video. Kelas 2</h5>
+        <h5>2. Progress Kelas 2</h5>
         <br>
-        <p class="stats"> Peserta Terdaftar</p>
+        <p class="stats"></p>
         
         <div class="progress-wrapper">
             <div class="progress-bar">
@@ -766,9 +763,9 @@ echo "&nbsp;)&nbsp;";
     </div>
     <br> 
     <div class="course-container">
-        <h5>3.Progress Pendaftaran Pembelajaran Pengembangan Aplikasi Web, Aplikasi Desktop, VBA Excel. Kelas 3</h5>
+        <h5>3.Progress Kelas 3</h5>
         <br>
-        <p class="stats"> Peserta Terdaftar</p>
+        <p class="stats"></p>
         
         <div class="progress-wrapper">
             <div class="progress-bar">
@@ -798,6 +795,32 @@ echo "&nbsp;)&nbsp;";
         </div>
     </div>
   <br>
+            </div>
+        </div>
+        &#160;
+        <!-- Konten Utama -->
+        <div class="info-card" id="myCard">
+        <div class="content2">
+          <center>
+       <dd> <h4>Status Peserta</h4></dd>
+    <br>
+    <div class="chart-container"></div>
+
+    <div class="legend">
+        <div class="legend-item">
+         <center>   <span class="color-box l-color"></span> Diterima: <?php echo $totalL; ?>
+        </div>
+        <div class="legend-item">
+            <span class="color-box p-color"></span> Masih Proses: <?php echo $totalP; ?>
+        </div>
+        <div class="total-text">Total: <?php echo $totalSemua; ?></div>
+      </center>
+    </div>
+    </div>
+      </div>
+      </div>
+      <br>
+
 
     <div class="Bagian_Bawah2">
     <br>

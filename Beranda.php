@@ -88,6 +88,9 @@ if ($counter !== false) {
       
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  <!-- css whatsapp -->
     <style>
+        .hidden-box {
+    display: none;
+}
  .counter-box { border: 1px solid #ccc; padding: 4px; display: inline-block; border-radius: 5px;color:white; height:50px; }
 
         .container {
@@ -700,7 +703,7 @@ if($sub){
                         <form action="code_student.php" method="POST">
                         <div class="mb-3">
                                 <label></label>
-                            <input type="text" name="id" value="<?php echo $auto_kode;?> " class="form-control"readonly >
+                            <input type="text" name="id" value="<?php echo $auto_kode;?> " class="hidden-box"readonly >
                             </div>
                             <div class="mb-3">
                                 <label></label>
@@ -740,6 +743,10 @@ echo date('d/m/Y/l'); //kombinasi jam dan tanggal
                             <div class="mb-3">
                                 <label></label>
                                 <input type="text" name="No_Hp" class="form-control"placeholder="masukan No WA"required>
+                            </div>
+                            <div class="mb-3">
+                                <label></label>
+                                <input type="text" name="Setatus" class="hidden-box" value="Masih Proses"readonly>
                             </div>
                             <div class="mb-3">
                                 <button  type="submit"name="save_student"  class="btn btn-primary">Daftar</button>

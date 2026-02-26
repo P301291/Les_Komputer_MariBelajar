@@ -83,7 +83,7 @@ $(".reveal").on('click',function() {
 	<title>Login </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style_login.css"><!--CSS Eksternal-->
+<link rel="stylesheet" href="css/style_login1.css"><!--CSS Eksternal-->
 <style>
 	
 
@@ -160,15 +160,13 @@ h2{color:brown};
 <br>
 
 <center>
-<div class="container">
-<div class="col">
-	<div class="col-md-4">
+<div class="background">
 	<br>
-	<br>
-	<h2><b><p align="left"style="color: white;">LOGIN</p></b></h2>
-	<h6><p align="left"style="color: white;">Selamat Datang Di Aplikasi Mari Belajar</p></h6>
 		<hr/>
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+		<br>
+	<h2><b><p align="left"style="color: white;">LOGIN</p></b></h2>
+	<h6><p align="left"style="color: white;">Selamat Datang Di Aplikasi Mari Belajar</p></h6>
 	<div class="form-group">
 	
 		<input class="form-control" type="text" name="username" id="username" placeholder="Masukan username"  />
@@ -185,13 +183,10 @@ h2{color:brown};
 
 	<div class="col-sm-12 pt-3 text-left"">
 
-		<input class="btn-primary" type="submit" name="kirim" value="Login"/>
-		 <input class="btn-primary" type="reset" value="Reset">
-		
- 
-		
+		<input class="button" type="submit" name="kirim" value="Login"/>
+		 <input class="button" type="reset" value="Reset">
+<br>
 <div class="col-sm-15 pt-10 text-left"> 
-	<br>
              <!--<p><b><font color="black">Lupa Password?</b> <a href="add_admin.php"><i><font color="white">Lupa Password</i></a></p>-->
               <p><b><font color="black">Perlu Bantuan?</b> <a href="https://wa.me/6285872079330"class="whatsapp_float" target="_blank" rel="noopener noreferrer"><i><font color="white">Chat Me</i></a></p>    
               	<p><b><font color="black">Kembali Ke :</b> <a href="Beranda.php"><i><font color="white">Halaman Beranda</i></a></p> 

@@ -145,7 +145,7 @@ if($sub){
                 <div class="card">
                     <div class="card-header">
                         <h4>Form Pendaftaran
-                            <a href="Beranda.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="Data_Siswa.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -194,6 +194,10 @@ echo date('d/m/Y/l'); //kombinasi jam dan tanggal
                                 <label>Whatsapp</label>
                                 <input type="text" name="No_Hp" class="form-control"placeholder="masukan No WA"required>
                             </div> 
+                            <div class="mb-3">
+                                <label></label>
+                                <input type="text" name="Setatus" class="form-control" value="Masih Proses"readonly>
+                            </div>
                             <div class="mb-3">
                                 <button type="submit" name="save_student" class="btn btn-primary">Daftar</button>
                                 <button type="reset" name="save_student" class="btn btn-primary">Reset</button>

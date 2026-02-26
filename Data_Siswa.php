@@ -1,9 +1,21 @@
-
 <?php
-session_start();
+session_start(); // Wajib di paling atas
 
-// Set the inactivity time of 15 minutes (900 seconds)
-$inactivity_time = 10 * 20;
+// Pengecekan: Apakah user sudah login?
+if (!isset($_SESSION['nama'])) {
+    // Jika tidak ada session, lempar kembali ke halaman login
+    header("Location: login.php");
+    exit;
+}
+
+// Ambil data dari session
+$user_login = $_SESSION['nama'];
+?>
+<?php
+
+
+// Set the inactivity time of 15 minutes (900 seconds) (perbaikan disini session_start();
+$inactivity_time = 20 * 35;
 
 // Check if the last_timestamp is set
 // and last_timestamp is greater then 15 minutes or 9000 seconds
@@ -82,6 +94,7 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
     $result["perpage"] = showperpage($sql, $perPage, $href);
   }
 ?>
+
 
 <html lang="en" dir="ltr">
   <head>
@@ -259,8 +272,8 @@ function myFunction() {
          <div class="user_details">
          <img decoding="async" src="gambar/mb21.png" alt="">
            <div class="name_job">
-             <div class="name">Mari Belajar</div>
-             <div class="job">Bimbingan Belajar Komputer</div>
+             <div class="name"><h4><?php echo $user_login; ?></h4></div>
+             <div class="job">Admin Mari Belajar</div>
            </div>
          </div>
      
@@ -308,6 +321,7 @@ function myFunction() {
           <th><strong>Alamat&#160;</strong></th>
           <th><strong>Tanggal&#160;</strong></th>
           <th><strong>No Whatsapp&#160;</strong></th>
+          <th><strong>Setatus&#160;</strong></th>
           <th><strong>Aksi&#160;</strong></th>
           
           </tr>
@@ -326,8 +340,9 @@ function myFunction() {
           <td>&nbsp;<?php echo $result[$k]["Alamat"]; ?>&#160;</td>
           <td>&nbsp;<?php echo $result[$k]["Date"]; ?>&#160;</td> 
           <td>&nbsp;<?php echo $result[$k]["No_Hp"]; ?>&#160;</td> 
+          <td>&nbsp;<?php echo $result[$k]["Setatus"]; ?>&#160;</td> 
           <td>
-          &#160;<a class="btnEditAction" href="edit.php?id=<?php echo $result[$k]["id"]; ?>">Edit</a>  <a class="btnDeleteAction" href="delete.php?action=delete&id=<?php echo $result[$k]["id"]; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">Hapus</a> 
+          &#160;<a class="btnEditAction" href="edit.php?id=<?php echo $result[$k]["id"]; ?>">Edit</a>  <a class="btnDeleteAction" href="delete.php?action=delete&id=<?php echo $result[$k]["id"]; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">Hapus</a> <a class="btnEditAction" href="Verifikasi.php?id=<?php echo $result[$k]["id"]; ?>">Verifikasi</a>
 
           </td>
           </tr>
