@@ -14,7 +14,7 @@
             background-color:rgb(10, 131, 20);
         }
         .container {
-            margin-top: 50px;
+            margin-top: 30px;
             margin-bottom: 50px;
         }
         .preview-img {
@@ -30,7 +30,7 @@
             width: 100%;
             background: white;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .file {
@@ -41,13 +41,10 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="text-center mb-4">
         <h2>Panel Pengelolaan Gambar</h2>
-        <p>Mari Belajar - Dashboard Content</p>
     </div>
-
     <?php
     // Koneksi Database (Gunakan mysqli agar konsisten)
     $kon = mysqli_connect("localhost", "root", "", "db_user");
