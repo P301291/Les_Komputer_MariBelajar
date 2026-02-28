@@ -40,7 +40,7 @@
 		{
 			// import data excel mulai baris ke-2 (karena ada header pada baris 1)
 			if ($Key < 1) continue;			
-			$query=mysql_query("INSERT INTO toy(id,Nama,Jenis_Kelamin,Kursus,Alamat,Date,No_Hp) VALUES ('".$Row[0]."', '".$Row[1]."','".$Row[2]."','".$Row[3]."','".$Row[4]."','".$Row[5]."','".$Row[6]."')");
+			$query=mysql_query("INSERT INTO toy(id,Nama,Jenis_Kelamin,Kursus,Alamat,Date,No_Hp,Setatus) VALUES ('".$Row[0]."', '".$Row[1]."','".$Row[2]."','".$Row[3]."','".$Row[4]."','".$Row[5]."','".$Row[6]."','".$Row[7]."')");
 		}
 		if ($query) {
 				echo "Import data berhasil ";

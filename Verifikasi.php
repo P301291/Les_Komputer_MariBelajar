@@ -16,8 +16,6 @@ $result = $db_handle->runQuery("SELECT * FROM toy WHERE id='" . $_GET["id"] . "'
 ?>
 <link href="css/style_add.css" type="text/css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-
-	<br>
 <p><form name="frmToy" method="post" action="" class="frmToy" onClick="return validate();">
 	<br>
 
@@ -25,9 +23,7 @@ $result = $db_handle->runQuery("SELECT * FROM toy WHERE id='" . $_GET["id"] . "'
 <center>
 <div class="text" style="color:white"><h1>Verifikasi</h1></div>
 </center>
-<br>
 <div>
-
 <label style="padding-top:20px;">Id</label>
 <span id="name-info" class="info"></span><br/>
 <input type="text" name="id" id="id" class="demoInputBox" value="<?php echo $result[0]["id"]; ?>"class="field left" readonly>

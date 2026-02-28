@@ -4,7 +4,7 @@
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 if(!empty($_POST["submit"])) {
-    $query = "UPDATE toy set Nama = '".$_POST["Nama"]."', Jenis_Kelamin = '".$_POST["Jenis_Kelamin"]."', Kursus = '".$_POST["Kursus"]."', Kursus = '".$_POST["Kursus"]."', Alamat = '".$_POST["Alamat"]."', Date = '".$_POST["Date"]."' WHERE  id=".$_GET["id"];
+    $query = "UPDATE toy set Nama = '".$_POST["Nama"]."', Jenis_Kelamin = '".$_POST["Jenis_Kelamin"]."', Kursus = '".$_POST["Kursus"]."', Kursus = '".$_POST["Kursus"]."', Alamat = '".$_POST["Alamat"]."', Date = '".$_POST["Date"]."', No_Hp = '".$_POST["No_Hp"]."' WHERE  id=".$_GET["id"];
     $result = $db_handle->executeQuery($query);
 	if(!$result){
 		$message = "Problem in Editing! Please Retry!";
@@ -56,6 +56,10 @@ $result = $db_handle->runQuery("SELECT * FROM toy WHERE id='" . $_GET["id"] . "'
 <label>Date</label> 
 <span id="Date-info" class="info"></span><br/>
 <input type="text" name="Date" id="Date" class="demoInputBox" value="<?php echo $result[0]["Date"]; ?>"class="field left" readonly>
+</div>
+<label>Whatsapp</label> 
+<span id="Date-info" class="info"></span><br/>
+<input type="text" name="No_Hp" id="No_Hp" class="demoInputBox" value="<?php echo $result[0]["No_Hp"]; ?>"class="field left">
 </div>
 <div>
 	<br>

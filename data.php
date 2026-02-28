@@ -12,6 +12,7 @@ include 'config.php';
 		<th>Alamat</th>
 		<th>Tanggal</th>
         <th>Whatsapp</th>
+        <th>Setatus</th>
     </tr>
     <?php 
     $data = mysql_query("select * from toy"); 
@@ -27,6 +28,7 @@ include 'config.php';
 		        <td><?php echo $d['Alamat']; ?></td>
 				        <td><?php echo $d['Date']; ?></td>
                         <td><?php echo $d['No_Hp']; ?></td>
+                        <td><?php echo $d['Setatus']; ?></td>
     </tr>
     <?php
     } 
