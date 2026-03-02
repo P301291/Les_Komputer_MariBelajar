@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" name="username" class="form-control" value="<?php echo $_SESSION['username']; ?>">
+                        <input type="text" name="username" class="form-control" value="<?php echo $_SESSION['username']; ?>"readonly>
                         <span class="error-form"><?php echo $username_err; ?></span>
                     </div>
 

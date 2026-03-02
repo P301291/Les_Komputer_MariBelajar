@@ -6,23 +6,30 @@ $username_err = $password_err = $nama_err = $level_err = $konfir_password_err = 
 $username = $password = $nama = $level = $konfir_password = "";
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
-    // ... (Logika PHP Anda tetap sama karena sudah benar) ...
+    // Validasi Email (Username)
     if(empty(trim($_POST['username']))){
-        $username_err = "Maaf username tidak boleh kosong";
-    }else{
-        if(Cek_User($_POST['username'])){
-            $username_err = "Maaf username sudah ada";
-        }else{
-            $username = test_input($_POST['username']);
-            $username = mysqli_real_escape_string($koneksi, $username);
+        $username_err = "Maaf email tidak boleh kosong";
+    } else {
+        $username = test_input($_POST['username']);
+        // Cek apakah format email valid
+        if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+            $username_err = "Format email tidak valid (contoh: user@mail.com)";
+        } else {
+            if(Cek_User($username)){
+                $username_err = "Maaf email ini sudah terdaftar";
+            } else {
+                $username = mysqli_real_escape_string($koneksi, $username);
+            }
         }
     }
+
     if(empty(trim($_POST['password']))){
         $password_err = "Maaf password tidak boleh kosong";
     }else{
         $password = test_input($_POST['password']);
         $password = mysqli_real_escape_string($koneksi, $password);
     }
+
     if(empty(trim($_POST['konfir_password']))){
         $konfir_password_err = "Maaf konfirmasi password tidak boleh kosong";
     }else{
@@ -31,12 +38,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $konfir_password_err = "Maaf password tidak cocok";
         }
     }
+
     if(empty(trim($_POST['nama']))){
         $nama_err = "Maaf nama tidak boleh kosong";
     }else{
         $nama = test_input($_POST['nama']);
         $nama = mysqli_real_escape_string($koneksi, $nama);
     }
+
     if(empty(trim($_POST['level']))){
         $level_err = "Maaf level tidak boleh kosong";
     }else{
@@ -59,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah User Baru</title>
+    <title>Tambah User Baru (Email)</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     
@@ -124,6 +133,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             top: 14px;
             font-size: 20px;
             color: #130685;
+            z-index: 10;
         }
 
         .error-form {
@@ -181,13 +191,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <div class="register-card">
     <h2>Tambah User</h2>
     <hr>
-    <p>Silakan lengkapi data di bawah ini untuk mendaftarkan pengguna baru.</p>
+    <p>Silakan lengkapi data dengan menggunakan alamat email sebagai username.</p>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         
         <div class="form-group">
-            <i class='bx bxs-user-circle'></i>
-            <input class="form-control" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>" />
+            <i class='bx bxs-envelope'></i>
+            <input class="form-control" type="email" name="username" placeholder="Alamat Email" value="<?php echo $username; ?>" required />
             <span class="error-form"><?php echo $username_err; ?></span>
         </div>
         

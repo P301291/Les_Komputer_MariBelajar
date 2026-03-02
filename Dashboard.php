@@ -215,7 +215,7 @@ $_SESSION['last_timestamp'] = time();
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <i class='bx bxl-codepen'></i>
+                <i class=''></i>
                 <div class="logo_name">Mari Belajar</div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
@@ -324,14 +324,13 @@ $_SESSION['last_timestamp'] = time();
             <div style="margin-bottom: 20px;">
                 <img src="gambar/mb21.png" width="60" style="border-radius: 50%; background: #fff; padding: 5px;">
             </div>
-            <p>&copy; 2026 <b>Mari Belajar</b> - Website Pendaftaran Online Les Komputer</p>
+            <p>&copy; 2025 <b>Mari Belajar</b> - Website Pendaftaran Online Les Komputer</p>
             <p style="opacity: 0.6; font-size: 13px;">Designed by Candra Argadinata, S.Kom.</p>
         </footer>
     </div>
 
-    <button onclick="window.scrollTo(0, 0)" style="position: fixed; bottom: 20px; right: 20px; background: var(--blue); color: white; border: none; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center;">
-        <i class='bx bx-up-arrow-alt' style="font-size: 24px;"></i>
-    </button>
+
+
 
     <script>
         // Loading Screen Handler

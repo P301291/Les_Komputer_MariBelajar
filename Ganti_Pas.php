@@ -87,7 +87,7 @@
             --warning: #f1c40f;
         }
         body { font-family: 'Poppins', sans-serif; background-color: #095814; color: #333; margin: 0; }
-        .home_content { padding: 20px 40px; background: #0e7005; min-height: 130vh; }
+        .home_content { padding: 20px 40px; background: #0e7005; min-height: 110vh; }
         .admin-container { padding: 20px 10px; }
         
         .page-header {

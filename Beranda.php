@@ -87,6 +87,7 @@ if ($counter !== false) {
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'><!--css Media sosial-->
       
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  <!-- css whatsapp -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .hidden-box {
     display: none;
@@ -1010,7 +1011,11 @@ Singkatnya, belajar teknologi adalah investasi untuk masa depan. Ini memberdayak
                     </div>
                    
         </div>
-        
+        <a href="Beranda.php" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" 
+   style="position: fixed; bottom: 20px; right: 20px; background-color: #007bff; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-decoration: none; transition: background 0.3s; cursor: pointer;">
+    <i class='bx bx-up-arrow-alt' style="font-size: 24px;"></i>
+</a>
+
 </div><!--ini div penutup dari wrapper-->
 
 </body>

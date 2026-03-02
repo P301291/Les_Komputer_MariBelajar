@@ -57,7 +57,7 @@ if(!empty($_POST["search"])) {
 
 // Logic All Data vs Pagination
 $showAll = isset($_GET['show']) && $_GET['show'] == 'all';
-$perPage = 6; 
+$perPage = 10; 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page <= 0) $page = 1;
 $start = ($page - 1) * $perPage;
@@ -91,7 +91,7 @@ $result = $db_handle->runQuery($query);
             --info: #3498db;
         }
         body { font-family: 'Poppins', sans-serif; background-color: #095814; color: #333; margin: 0; }
-        .home_content { padding: 20px 40px; background: #0e7005; min-height: 140vh; }
+        .home_content { padding: 20px 40px; background: #0e7005; min-height: 160vh; }
         .header-main {
             background: linear-gradient(135deg, #11101d 0%, #058010 100%);
             padding: 30px; border-radius: 15px; color: white; margin-bottom: 25px;
@@ -150,7 +150,7 @@ $result = $db_handle->runQuery($query);
 <body class="kontainer-scroll">
     <div class="sidebar">
         <div class="logo_content">
-            <div class="logo"><i class='bx bxl-codepen'></i><div class="logo_name">Mari Belajar</div></div>
+            <div class="logo"><i class=''></i><div class="logo_name">Mari Belajar</div></div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav_list">
@@ -293,6 +293,8 @@ $result = $db_handle->runQuery($query);
                 </div>
             </div>
         </div>
+        
+    <br>
         </div>
 
     <script>
