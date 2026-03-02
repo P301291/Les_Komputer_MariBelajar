@@ -178,7 +178,7 @@
             <li><a href="Ganti_Pas.php"><i class='bx bx-cog'></i><span class="links_name">Admin</span></a></li>
             <li><a href="Input_Sidebar.php"><i class='bx bx-cog'></i><span class="links_name">Sidebar</span></a></li>
             <li><a href="Input_Header.php"><i class='bx bx-cog'></i><span class="links_name">Header</span></a></li>
-            <li><a href="logout.php"><i class='bx bx-log-out'></i><span class="links_name">Keluar</span></a></li>
+            <li><a href="logout.php"><i class='bx bxs-log-out' style="color: #ff5e5e;"></i><span class="links_name" style="color: #ff5e5e;">Keluar</span></a></li>
         </ul>
     </div>
 
@@ -240,6 +240,7 @@
                                             <div style="display: flex; gap: 5px; justify-content: center;">
                                                 <!--<a href="update.php?id=<?php echo $v["id"]; ?>" class="btn-action" style="background:var(--warning)" title="Ubah Password"><i class='bx bx-key'></i></a>-->
                                                 <a href="delete1.php?id=<?php echo $v["id"]; ?>" class="btn-action" style="background:var(--danger)" onclick="return confirm('Hapus user ini?')" title="Hapus"><i class='bx bx-trash'></i></a>
+                                                <a href="cetak_admin.php?id=<?php echo $v["id"]; ?>" class="btn-action" style="background:var(--danger)" onclick="return confirm('yakin mau cetak??')" title="Hapus"><i class='bx bx-printer'></i></a>
                                             </div>
                                         </td>
                                     </tr>

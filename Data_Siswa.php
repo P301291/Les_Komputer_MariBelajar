@@ -157,7 +157,7 @@ $result = $db_handle->runQuery($query);
             <li><a href="Dashboard.php"><i class='bx bx-grid-alt'></i><span class="links_name">Dashboard</span></a></li>
             <li><a href="Data_Siswa.php"><i class='bx bx-user'></i><span class="links_name">Data Siswa</span></a></li>
             <li><a href="Ganti_Pas.php"><i class='bx bx-cog'></i><span class="links_name">Admin</span></a></li>
-            <li><a href="logout.php"><i class='bx bx-log-out'></i><span class="links_name">Keluar</span></a></li>
+            <li><a href="logout.php"><i class='bx bxs-log-out' style="color: #ff5e5e;"></i><span class="links_name" style="color: #ff5e5e;">Keluar</span></a></li>
         </ul>
     </div>
 
@@ -181,6 +181,11 @@ $result = $db_handle->runQuery($query);
                             <?php if($showAll || !empty($_POST["search"])) echo '<a href="Data_Siswa.php" style="padding:12px; color:#999;"><i class="bx bx-refresh" style="font-size:24px;"></i></a>'; ?>
                         </div>
                     </div>
+                    <div>
+                <a href="cetak_siswa.php" target="_blank" style="background:rgb(8, 92, 15); color: white; padding: 10px 10px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 9px;">
+                    <i class='bx bxs-file-pdf'></i> <h6>Cetak semua</h6>
+                </a>
+            </div>
 
                     <div class="dropdown-modern">
                         <button type="button" class="dropbtn-modern"><i class='bx bx-customize'></i> Menu Eksekusi <i class='bx bx-chevron-down'></i></button>
@@ -231,6 +236,7 @@ $result = $db_handle->runQuery($query);
                                             <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn-act btn-edit" title="Edit"><i class='bx bx-edit-alt'></i></a>
                                             <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn-act btn-delete" onclick="return confirm('Hapus?')" title="Hapus"><i class='bx bx-trash'></i></a>
                                             <a href="Verifikasi.php?id=<?php echo $row['id']; ?>" class="btn-act btn-verif" title="Verifikasi"><i class='bx bx-check-shield'></i></a>
+                                            <a href="cetak_siswa.php?id=<?php echo $row['id']; ?>" class="btn-act btn-verif" title="Verifikasi"><i class='bx bx-printer'></i></a>
                                         </div>
                                     </td>
                                 </tr>

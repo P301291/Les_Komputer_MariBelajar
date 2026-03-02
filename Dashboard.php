@@ -42,51 +42,29 @@ $_SESSION['last_timestamp'] = time();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Mari Belajar</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/styles1.css">
 
     <style>
         :root {
-            --primary: #2ecc71;
-            --secondary: #27ae60;
-            --dark: #11101d;
-            --light: #f4f7fe;
-            --blue: #3498db;
-            --red: #e74c3c;
-            --orange: #f39c12;
-        }
-
-        /* FITUR SCROLLBAR MODERN */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 10px;
-            border: 2px solid #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--blue);
+            --primary: #4361ee;
+            --success: #2ecc71;
+            --info: #3498db;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --dark: #1e293b;
+            --light-bg: #f8fafc;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light-bg);
             margin: 0;
-            overflow-x: hidden;
+            color: #334155;
         }
 
         /* Loading Screen */
@@ -96,145 +74,123 @@ $_SESSION['last_timestamp'] = time();
             z-index: 9999; transition: 0.5s;
         }
         .spinner {
-            width: 50px; height: 50px;
-            border: 5px solid #f3f3f3; border-top: 5px solid var(--blue);
+            width: 45px; height: 45px;
+            border: 4px solid #f3f3f3; border-top: 4px solid var(--primary);
             border-radius: 50%; animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Dashboard Layout */
         .home_content {
-            padding: 20px 30px;
-            transition: all 0.5s ease;
+            padding: 25px 35px;
+            transition: var(--transition);
             min-height: 100vh;
-            overflow-y: auto;
         }
 
+        /* Banner */
         .welcome-banner {
-            background: linear-gradient(45deg, var(--dark), var(--secondary));
-            padding: 30px; border-radius: 15px; color: white; margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--dark) 0%, #334155 100%);
+            padding: 35px; border-radius: 20px; color: white; margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        /* Stats Cards */
+        /* Card Stats */
         .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px; margin-bottom: 30px;
         }
         .card {
-            background: #fff; padding: 20px; border-radius: 15px;
-            display: flex; align-items: center; gap: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s; border-bottom: 4px solid transparent;
+            background: #fff; padding: 22px; border-radius: 18px;
+            display: flex; align-items: center; gap: 18px;
+            box-shadow: var(--card-shadow); transition: var(--transition);
         }
         .card:hover { transform: translateY(-5px); }
-        .card.blue { border-color: var(--blue); }
-        .card.green { border-color: var(--primary); }
-        .card.orange { border-color: var(--orange); }
-        .card.red { border-color: var(--red); }
-        
         .card-icon {
-            width: 60px; height: 60px; border-radius: 12px;
-            display: flex; justify-content: center; align-items: center; font-size: 24px;
+            width: 55px; height: 55px; border-radius: 14px;
+            display: flex; justify-content: center; align-items: center; font-size: 22px;
         }
-        .blue .card-icon { background: rgba(52, 152, 219, 0.1); color: var(--blue); }
-        .green .card-icon { background: rgba(46, 204, 113, 0.1); color: var(--primary); }
-        .orange .card-icon { background: rgba(243, 156, 18, 0.1); color: var(--orange); }
-        .red .card-icon { background: rgba(231, 76, 60, 0.1); color: var(--red); }
+        .blue .card-icon { background: #e0e7ff; color: var(--primary); }
+        .green .card-icon { background: #dcfce7; color: var(--success); }
+        .orange .card-icon { background: #fef3c7; color: var(--warning); }
+        .red .card-icon { background: #fee2e2; color: var(--danger); }
 
-        .card-content h3 { margin: 0; font-size: 14px; color: #7f8c8d; }
-        .card-content h1 { margin: 5px 0; font-size: 28px; color: var(--dark); }
-
-        /* Main Info Sections */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
-        }
-
+        /* Info Grid */
+        .info-grid { display: grid; grid-template-columns: 1.8fr 1fr; gap: 25px; }
         .info-box {
-            background: white; padding: 25px; border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            max-height: 600px; /* Batas tinggi box sebelum scroll internal muncul */
-            overflow-y: auto;
+            background: white; padding: 28px; border-radius: 20px;
+            box-shadow: var(--card-shadow);
         }
 
-        /* Progress Bar Modern */
+        /* Progress Bar */
         .progress-item { margin-bottom: 25px; }
-        .progress-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 500; }
-        .progress-container {
-            background: #eee; height: 12px; border-radius: 10px; overflow: hidden;
-        }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
+        .progress-container { background: #f1f5f9; height: 10px; border-radius: 10px; }
         .progress-fill {
-            height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px; transition: 1s ease-in-out;
+            height: 100%; background: linear-gradient(90deg, var(--primary), #4cc9f0);
+            border-radius: 10px; transition: 1.2s ease-in-out;
         }
 
-        /* Donut Chart Modern */
-        .chart-wrapper {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-        }
+        /* Chart */
         .donut-chart {
-            width: 200px; height: 200px; border-radius: 50%;
-            background: conic-gradient(
-                var(--blue) 0% <?php echo $persenDiterima; ?>%, 
-                var(--red) <?php echo $persenDiterima; ?>% 100%
-            );
-            display: flex; justify-content: center; align-items: center;
-            position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 190px; height: 190px; border-radius: 50%; margin: 0 auto;
+            background: conic-gradient(var(--info) 0% <?php echo $persenDiterima; ?>%, var(--danger) <?php echo $persenDiterima; ?>% 100%);
+            display: flex; justify-content: center; align-items: center; position: relative;
         }
-        .donut-chart::after {
-            content: ""; width: 140px; height: 140px; background: white;
-            border-radius: 50%; position: absolute;
-        }
-        .chart-center-text {
-            position: absolute; z-index: 5; text-align: center;
-        }
-        .chart-center-text b { font-size: 24px; display: block; }
+        .donut-chart::after { content: ""; width: 145px; height: 145px; background: white; border-radius: 50%; position: absolute; }
+        .chart-center-text { position: absolute; z-index: 5; text-align: center; }
+        
+        .legend { margin-top: 25px; }
+        .legend-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
 
-        .legend { margin-top: 20px; width: 100%; }
-        .legend-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14px; }
-        .dot { width: 12px; height: 12px; border-radius: 3px; }
-
-        /* Footer */
+        /* FOOTER SECTION (Sesuai permintaan: tidak dihilangkan) */
         .footer {
             margin-top: 50px; background: var(--dark); color: white;
-            padding: 40px; border-radius: 20px 20px 0 0; text-align: center;
+            padding: 45px 20px; border-radius: 24px 24px 0 0; text-align: center;
+        }
+        .footer b { color: #4cc9f0; }
+        .footer-logo {
+            margin-bottom: 20px; display: inline-block;
+        }
+        .footer-logo img {
+            border-radius: 50%; background: #fff; padding: 6px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
         }
 
-        @media (max-width: 992px) {
-            .info-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 992px) { .info-grid { grid-template-columns: 1fr; } }
+        .kontainer-scroll {
+   
+   overflow-y: scroll; /* Scroll vertikal */
+
+}
     </style>
 </head>
-<body>
+<body class="kontainer-scroll">
 
     <div id="loading-screen"><div class="spinner"></div></div>
 
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <i class=''></i>
-                <div class="logo_name">Mari Belajar</div>
+                <i class='bx bxs-book-open' style="font-size: 26px; color: #4cc9f0;"></i>
+                <div class="logo_name" style="margin-left: 10px;">Mari Belajar</div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav_list">
-            <li><a href="Dashboard.php"><i class='bx bx-grid-alt'></i><span class="links_name">Dashboard</span></a></li>
-            <li><a href="Data_Siswa.php"><i class='bx bx-user'></i><span class="links_name">Data Siswa</span></a></li>
-            <li><a href="Ganti_Pas.php"><i class='bx bx-cog'></i><span class="links_name">Admin</span></a></li>
-            <li><a href="logout.php"><i class='bx bx-log-out'></i><span class="links_name">Keluar</span></a></li>
+            <li><a href="Dashboard.php"><i class='bx bxs-grid-alt'></i><span class="links_name">Dashboard</span></a></li>
+            <li><a href="Data_Siswa.php"><i class='bx bxs-user-detail'></i><span class="links_name">Data Siswa</span></a></li>
+            <li><a href="Ganti_Pas.php"><i class='bx bxs-cog'></i><span class="links_name">Admin</span></a></li>
+            <li><a href="logout.php"><i class='bx bxs-log-out' style="color: #ff5e5e;"></i><span class="links_name" style="color: #ff5e5e;">Keluar</span></a></li>
         </ul>
     </div>
 
     <div class="home_content">
         <div class="welcome-banner">
             <div style="display: flex; align-items: center; gap: 20px;">
-                <img src="gambar/mb21.png" width="80" style="background: white; border-radius: 50%; padding: 5px;">
+                <img src="gambar/mb21.png" width="85" style="background: white; border-radius: 18px; padding: 8px;">
                 <div>
-                    <h1 style="margin:0;">Halo, <?php echo $user_login; ?>!</h1>
-                    <p style="margin:5px 0 0 0; opacity: 0.8;">Selamat datang kembali di panel administrasi Mari Belajar.</p>
+                    <h1 style="margin:0; font-size: 28px;">Halo, <?php echo $user_login; ?>!</h1>
+                    <p style="margin:5px 0 0 0; opacity: 0.85; font-size: 15px;">Selamat datang kembali di panel administrasi Mari Belajar.</p>
                 </div>
             </div>
         </div>
@@ -262,7 +218,7 @@ $_SESSION['last_timestamp'] = time();
                 </div>
             </div>
             <div class="card red">
-                <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                <div class="card-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="card-content">
                     <h3>Diterima</h3>
                     <h1><?php echo $totalDiterima; ?></h1>
@@ -272,7 +228,9 @@ $_SESSION['last_timestamp'] = time();
 
         <div class="info-grid">
             <div class="info-box">
-                <h3 style="margin-bottom: 25px;"><i class="fas fa-tasks" style="color: var(--primary);"></i> Progress Minat Kelas</h3>
+                <h3 style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-chart-bar" style="color: var(--primary);"></i> Progress Minat Kelas
+                </h3>
                 
                 <?php
                 $kursus_list = [
@@ -289,7 +247,7 @@ $_SESSION['last_timestamp'] = time();
                 ?>
                 <div class="progress-item">
                     <div class="progress-label">
-                        <span><?php echo $label; ?> (8xP: <?php echo $c1; ?>, 12xP: <?php echo $c2; ?>)</span>
+                        <span><?php echo $label; ?> <small style="font-weight: 400; color: #64748b;">(8x: <?php echo $c1; ?>, 12x: <?php echo $c2; ?>)</small></span>
                         <span><?php echo round($persen, 1); ?>%</span>
                     </div>
                     <div class="progress-container">
@@ -299,21 +257,21 @@ $_SESSION['last_timestamp'] = time();
                 <?php endforeach; ?>
             </div>
 
-            <div class="info-box chart-wrapper">
+            <div class="info-box" style="text-align: center;">
                 <h3 style="margin-bottom: 20px;">Status Peserta</h3>
                 <div class="donut-chart">
                     <div class="chart-center-text">
-                        <b><?php echo $totalSemua; ?></b>
-                        <small>Total</small>
+                        <b style="font-size: 28px;"><?php echo $totalSemua; ?></b>
+                        <br><small style="color: #64748b;">Total</small>
                     </div>
                 </div>
-                <div class="legend">
+                <div class="legend" style="text-align: left; display: inline-block;">
                     <div class="legend-item">
-                        <span class="dot" style="background: var(--blue);"></span>
+                        <span class="dot" style="background: var(--info);"></span>
                         <span>Diterima: <b><?php echo $totalDiterima; ?></b></span>
                     </div>
                     <div class="legend-item">
-                        <span class="dot" style="background: var(--red);"></span>
+                        <span class="dot" style="background: var(--danger);"></span>
                         <span>Masih Proses: <b><?php echo $totalProses; ?></b></span>
                     </div>
                 </div>
@@ -321,19 +279,15 @@ $_SESSION['last_timestamp'] = time();
         </div>
 
         <footer class="footer">
-            <div style="margin-bottom: 20px;">
-                <img src="gambar/mb21.png" width="60" style="border-radius: 50%; background: #fff; padding: 5px;">
+            <div class="footer-logo">
+                <img src="gambar/mb21.png" width="65">
             </div>
-            <p>&copy; 2025 <b>Mari Belajar</b> - Website Pendaftaran Online Les Komputer</p>
-            <p style="opacity: 0.6; font-size: 13px;">Designed by Candra Argadinata, S.Kom.</p>
+            <p style="font-size: 16px; margin-bottom: 10px;">&copy; 2025 <b>Mari Belajar</b> - Website Pendaftaran Online Les Komputer</p>
+            <p style="opacity: 0.7; font-size: 13px; font-weight: 300; letter-spacing: 0.5px;">Designed by Candra Argadinata, S.Kom.</p>
         </footer>
     </div>
 
-
-
-
     <script>
-        // Loading Screen Handler
         window.addEventListener('load', () => {
             const loader = document.getElementById('loading-screen');
             setTimeout(() => {
@@ -342,7 +296,6 @@ $_SESSION['last_timestamp'] = time();
             }, 500);
         });
 
-        // Sidebar Toggle
         let btn = document.querySelector("#btn");
         let sidebar = document.querySelector(".sidebar");
         btn.onclick = function() {
